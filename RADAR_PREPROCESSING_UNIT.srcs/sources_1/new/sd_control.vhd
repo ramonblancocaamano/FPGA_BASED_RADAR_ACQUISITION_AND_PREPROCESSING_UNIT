@@ -62,7 +62,6 @@ ARCHITECTURE behavioral OF sd_control IS
     SHARED VARIABLE addr: INTEGER := 0;
     SHARED VARIABLE addr_packets: INTEGER := 0;
     
-
 BEGIN
     
     rd_trigger_ok <= sd_rd_trigger_ok;

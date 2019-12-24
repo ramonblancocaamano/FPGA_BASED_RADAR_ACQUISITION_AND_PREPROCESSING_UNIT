@@ -291,9 +291,13 @@ ARCHITECTURE behavioral OF main IS
     END COMPONENT;
     
     COMPONENT processing 
+        GENERIC( 
+            DATA : INTEGER
+        );
         PORT(
             rst: IN STD_LOGIC;
-            clk : IN STD_LOGIC;       
+            clk : IN STD_LOGIC;  
+            clk_radar : IN STD_LOGIC;      
             en_acquire : IN STD_LOGIC;
             en_resolution : IN STD_LOGIC; 
             resolution: IN INTEGER;       
@@ -663,10 +667,14 @@ BEGIN
             o_sclk => o_sclk
         );
     
-    INST_PROCESSING : processing 
+    INST_PROCESSING : processing
+        GENERIC MAP( 
+            DATA => DATA
+        )
         PORT MAP(
             rst => rst,
-            clk => clk,          
+            clk => clk,
+            clk_radar => radar_clk,            
             en_acquire => en_acquire,
             en_resolution =>  sw_resolution,    
             resolution => resolution,

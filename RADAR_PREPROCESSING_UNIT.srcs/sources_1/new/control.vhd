@@ -40,8 +40,8 @@ END control;
 
 ARCHITECTURE behavioral OF control IS
 
-    SHARED VARIABLE st_reset: BOOLEAN := FALSE;
-    SHARED VARIABLE st_arm: BOOLEAN := FALSE;
+    SHARED VARIABLE st_reset : BOOLEAN := FALSE;
+    SHARED VARIABLE st_arm : BOOLEAN := FALSE;
     SHARED VARIABLE st_rec : BOOLEAN := FALSE;
     SHARED VARIABLE st_save : BOOLEAN := FALSE;
     SHARED VARIABLE st_updown : BOOLEAN := FALSE;
@@ -59,101 +59,101 @@ BEGIN
       arming <= main_arming;
   
     p_reset:PROCESS(rst)
-        BEGIN
-            IF rst = '1' THEN 
-                IF st_reset = FALSE THEN            
-                    IF main_en_acquire = '1' THEN
-                        st_arm := TRUE;
-                    END IF;
-                    st_rec := FALSE;
-                    st_save := FALSE;
-                    st_updown := FALSE;
-                    main_en_acquire <= '0';
-                    main_en_save <= '0';
-                    main_resolution <= RES;
-                    st_reset := TRUE;
+    BEGIN
+        IF rst = '1' THEN 
+            IF st_reset = FALSE THEN            
+                IF main_en_acquire = '1' THEN
+                    st_arm := TRUE;
                 END IF;
-            ELSE 
-                st_reset := FALSE;
+                st_rec := FALSE;
+                st_save := FALSE;
+                st_updown := FALSE;
+                main_en_acquire <= '0';
+                main_en_save <= '0';
+                main_resolution <= RES;
+                st_reset := TRUE;
             END IF;
+        ELSE 
+            st_reset := FALSE;
+        END IF;
     END PROCESS p_reset;
     
     p_arming:PROCESS(clk)
-        BEGIN
-            IF RISING_EDGE(clk) THEN
-                IF st_arm = TRUE THEN
-                    main_arming <= '1';  
-                ELSE
-                    main_arming <= '0'; 
-                END IF;
-                st_arm := FALSE;  
+    BEGIN
+        IF RISING_EDGE(clk) THEN
+            IF st_arm = TRUE THEN
+                main_arming <= '1';  
+            ELSE
+                main_arming <= '0'; 
             END IF;
+            st_arm := FALSE;  
+        END IF;
     END PROCESS p_arming;
     
     p_record:PROCESS(clk, btn_record)        
-        BEGIN
-            IF st_reset = FALSE AND st_save = FALSE AND st_updown = FALSE THEN
-                IF RISING_EDGE(clk) THEN
-                    IF btn_record = '1' THEN
-                        IF st_rec = FALSE THEN  
-                            st_arm := TRUE;
-                            main_en_acquire <= NOT main_en_acquire;
-                            main_en_save <= '0';
-                            st_rec := TRUE;
-                        END IF;
-                    ELSE
-                        st_rec := FALSE;
+    BEGIN
+        IF st_reset = FALSE AND st_save = FALSE AND st_updown = FALSE THEN
+            IF RISING_EDGE(clk) THEN
+                IF btn_record = '1' THEN
+                    IF st_rec = FALSE THEN  
+                        st_arm := TRUE;
+                        main_en_acquire <= NOT main_en_acquire;
+                        main_en_save <= '0';
+                        st_rec := TRUE;
                     END IF;
-                END IF; 
-            END IF;   
+                ELSE
+                    st_rec := FALSE;
+                END IF;
+            END IF; 
+        END IF;   
     END PROCESS p_record;
     
     p_save:PROCESS(clk, btn_save) 
-        BEGIN
-            IF st_reset = FALSE AND st_rec = FALSE AND st_updown = FALSE THEN
-                IF sw_mode = '0' THEN
-                    IF RISING_EDGE(clk) THEN 
-                        IF btn_save = '1' THEN
-                            IF st_save = FALSE THEN
-                                IF main_en_acquire = '1' THEN
-                                    st_arm := TRUE;
-                                END IF;
-                                main_en_acquire <= '0';
-                                main_en_save <= '1';
-                                st_save := TRUE;
+    BEGIN
+        IF st_reset = FALSE AND st_rec = FALSE AND st_updown = FALSE THEN
+            IF sw_mode = '0' THEN
+                IF RISING_EDGE(clk) THEN 
+                    IF btn_save = '1' THEN
+                        IF st_save = FALSE THEN
+                            IF main_en_acquire = '1' THEN
+                                st_arm := TRUE;
                             END IF;
-                        ELSE
-                            st_save := FALSE;  
+                            main_en_acquire <= '0';
+                            main_en_save <= '1';
+                            st_save := TRUE;
                         END IF;
+                    ELSE
+                        st_save := FALSE;  
                     END IF;
                 END IF;
-            END IF;        
+            END IF;
+        END IF;        
     END PROCESS p_save;
     
     p_updown:PROCESS(clk, btn_up, btn_down)
-        BEGIN
-            IF st_reset = FALSE AND st_rec = FALSE AND st_save = FALSE THEN
-                IF sw_resolution = '1' THEN
-                    IF RISING_EDGE(clk) THEN
-                        IF btn_up = '1' OR btn_down = '1' THEN
-                            IF st_updown = FALSE THEN
-                                IF main_en_acquire = '1' THEN
-                                    st_arm := TRUE;
-                                END IF;
-                                IF btn_up = '1' AND main_resolution < 12 THEN
-                                    main_resolution <= main_resolution + 1;
-                                ELSIF btn_down = '1' AND main_resolution > 0 THEN
-                                    main_resolution <= main_resolution - 1;
-                                END IF;
-                                main_en_acquire <= '0';
-                                st_updown := TRUE;
+    BEGIN
+        IF st_reset = FALSE AND st_rec = FALSE AND st_save = FALSE THEN
+            IF sw_resolution = '1' THEN
+                IF RISING_EDGE(clk) THEN
+                    IF btn_up = '1' OR btn_down = '1' THEN
+                        IF st_updown = FALSE THEN
+                            IF main_en_acquire = '1' THEN
+                                st_arm := TRUE;
                             END IF;
-                        ELSE
-                            st_updown := FALSE;
+                            IF btn_up = '1' AND main_resolution < 12 THEN
+                                main_resolution <= main_resolution + 1;
+                            ELSIF btn_down = '1' AND main_resolution > 0 THEN
+                                main_resolution <= main_resolution - 1;
+                            END IF;
+                            main_en_acquire <= '0';
+                            st_updown := TRUE;
                         END IF;
+                    ELSE
+                        st_updown := FALSE;
                     END IF;
-                END IF; 
-            END IF;
+                END IF;
+            END IF; 
+        END IF;
     END PROCESS p_updown;
 
 END behavioral;

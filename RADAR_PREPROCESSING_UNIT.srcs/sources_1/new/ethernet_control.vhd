@@ -48,59 +48,59 @@ BEGIN
     
     
     PROCESS(clk)
-        BEGIN
-            IF rst = '1' THEN
-                eth_rd_trigger_ok <= '0';
-                eth_i_buff_rd_en <= '0';
-                eth_start <= '0';                
-                counter_data := 0;
-                counter_packets := 0;
-                state <= IDLE;
-            ELSIF RISING_EDGE(clk) THEN           
-                CASE (state) IS
+    BEGIN
+        IF rst = '1' THEN
+            eth_rd_trigger_ok <= '0';
+            eth_i_buff_rd_en <= '0';
+            eth_start <= '0';                
+            counter_data := 0;
+            counter_packets := 0;
+            state <= IDLE;
+        ELSIF RISING_EDGE(clk) THEN           
+            CASE (state) IS
+            
+                WHEN IDLE =>
                 
-                    WHEN IDLE =>
-                    
+                    eth_i_buff_rd_en <= '0';
+                    eth_start <= '0';
+                    counter_data := 0;                        
+                    IF counter_packets = PACKETS THEN
+                        counter_packets := 0;
+                    END IF;                        
+                    IF rd_continue_ok = '1' THEN
+                        eth_rd_continue <= '0';
+                    END IF;                        
+                    IF rd_trigger = '1' THEN                            
+                        eth_rd_trigger_ok <= '1';
+                        state <= SEND;
+                    END IF;
+                
+                WHEN SEND =>
+                
+                    IF rd_trigger = '0' THEN
+                        eth_rd_trigger_ok <= '0';
+                    END IF;                            
+                    IF counter_data < DATA THEN                    
+                        IF counter = x"000" AND eth_start = '0' THEN
+                            eth_i_buff_rd_en <= '1';
+                            eth_start <= '1';
+                            counter_data := counter_data + 1;                                
+                        ELSIF counter = x"000" AND eth_start = '1' THEN
+                            eth_i_buff_rd_en <= '0';
+                        ELSIF counter /= x"000" THEN
+                            eth_start <= '0';                                    
+                        END IF;                                
+                    ELSE 
                         eth_i_buff_rd_en <= '0';
                         eth_start <= '0';
-                        counter_data := 0;                        
-                        IF counter_packets = PACKETS THEN
-                            counter_packets := 0;
-                        END IF;                        
-                        IF rd_continue_ok = '1' THEN
-                            eth_rd_continue <= '0';
-                        END IF;                        
-                        IF rd_trigger = '1' THEN                            
-                            eth_rd_trigger_ok <= '1';
-                            state <= SEND;
-                        END IF;
-                    
-                    WHEN SEND =>
-                    
-                        IF rd_trigger = '0' THEN
-                            eth_rd_trigger_ok <= '0';
-                        END IF;                            
-                        IF counter_data < DATA THEN                    
-                            IF counter = x"000" AND eth_start = '0' THEN
-                                eth_i_buff_rd_en <= '1';
-                                eth_start <= '1';
-                                counter_data := counter_data + 1;                                
-                            ELSIF counter = x"000" AND eth_start = '1' THEN
-                                eth_i_buff_rd_en <= '0';
-                            ELSIF counter /= x"000" THEN
-                                eth_start <= '0';                                    
-                            END IF;                                
-                        ELSE 
-                            eth_i_buff_rd_en <= '0';
-                            eth_start <= '0';
-                            counter_packets := counter_packets + 1;
-                            IF counter /= x"000" AND counter_packets < PACKETS - 1 THEN
-                                eth_rd_continue <= '1';
-                            END IF; 
-                            state <= IDLE;
-                        END IF;
-                            
-                    END CASE;
+                        counter_packets := counter_packets + 1;
+                        IF counter /= x"000" AND counter_packets < PACKETS - 1 THEN
+                            eth_rd_continue <= '1';
+                        END IF; 
+                        state <= IDLE;
+                    END IF;
+                        
+                END CASE;
             END IF;
         END PROCESS;
         
