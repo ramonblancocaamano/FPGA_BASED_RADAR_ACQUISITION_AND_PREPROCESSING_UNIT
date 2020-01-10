@@ -26,8 +26,7 @@ ENTITY main IS
         radar_overflow: IN STD_LOGIC;        
         sw_mode : IN STD_LOGIC;
         sw_resolution : IN STD_LOGIC;        
-        btn_save : IN STD_LOGIC; 
-        btn_record : IN STD_LOGIC;               
+        btn_save : IN STD_LOGIC;              
         btn_up : IN STD_LOGIC;
         btn_down : IN STD_LOGIC;
         i_miso : IN STD_LOGIC;

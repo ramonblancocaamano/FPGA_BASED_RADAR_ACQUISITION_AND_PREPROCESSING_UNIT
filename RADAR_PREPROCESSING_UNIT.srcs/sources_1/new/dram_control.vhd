@@ -94,32 +94,32 @@ BEGIN
     p0:PROCESS(clk_ref)
     BEGIN
         IF rst = '1' THEN
-            dram_i_buff_wr_en <= '0';                
+            fifo := 0;                           
             dram_start <= '0';
-            fifo := 0;
+            dram_i_buff_wr_en <= '0';
             fifo_state <= IDLE;
         ELSIF RISING_EDGE(clk_ref) THEN            
             CASE fifo_state IS                    
                 WHEN IDLE => 
-                          
+                    
+                    fifo := 0;      
                     dram_start <= '0';         
-                    i_buff_wr_en <= '0';
-                    fifo := 0;                    
-                    IF trigger = '1' THEN  
-                        i_buff_wr_en <= '1';
-                        fifo := fifo + 1;
+                    dram_i_buff_wr_en <= '0';          
+                    IF trigger = '1' THEN
+                        fifo := fifo + 1;  
+                        dram_i_buff_wr_en <= '1';
                         fifo_state <= SEND;
                     END IF;
                 
                 WHEN SEND =>
                 
                     IF fifo < NDATA THEN
-                        i_buff_wr_en <= '1';
                         fifo := fifo + 1;
+                        dram_i_buff_wr_en <= '1';                        
                     ELSE
-                        i_buff_wr_en <= '0';
                         fifo := 0;
                         dram_start <= '1';
+                        dram_i_buff_wr_en <= '0';                       
                         fifo_state <= IDLE;
                     END IF;
                 
@@ -130,18 +130,18 @@ BEGIN
     p2:PROCESS(clk_81)
     BEGIN
         IF rst = '1' THEN
-                dout <= (OTHERS => '0');
+                dram := 0;
+                addr := 0;
+                ack := 0;
+                full := 0;
+                dram_start <= '0'; 
+                dram_dout <= (OTHERS => '0');
+                dram_o_buff_wr_en <= '0';                
                 dram_i_rst <= '0';                
                 dram_i_wb_cyc <= '0';
                 dram_i_wb_stb <= '0';                
                 dram_i_wb_we <= '0';                
-                dram_i_wb_addr <= (OTHERS => '0');                
-                dram_start <= '0';
-                dram_o_buff_wr_en <= '0';
-                dram := 0;
-                addr := 0;
-                ack := 0;
-                full := 0;                
+                dram_i_wb_addr <= (OTHERS => '0');               
                 dram_state <= IDLE;
        ELSIF RISING_EDGE(clk_81) THEN                    
                 IF o_wb_ack = '1' THEN   
@@ -154,15 +154,15 @@ BEGIN
                 
                     WHEN IDLE =>
                     
+                        dram := 0;
+                        ack := 0; 
                         dout <= (OTHERS => '0'); 
+                        dram_o_buff_wr_en <= '0';
                         dram_i_rst <= '1';                                           
                         dram_i_wb_cyc <= '0';
                         dram_i_wb_stb <= '0';
                         dram_i_wb_we <= '0';
-                        dram_i_wb_addr <= (OTHERS => '0');
-                        dram_o_buff_wr_en <= '0';   
-                        dram := 0;
-                        ack := 0;                  
+                        dram_i_wb_addr <= (OTHERS => '0');                                         
                         IF dram_start = '1' THEN   
                             dram_state <= SEND;
                         END IF;                       
@@ -185,10 +185,10 @@ BEGIN
                             dram_i_wb_stb <= '0';
                         END IF;
                         IF dram_i_wb_stb = '0' AND o_wb_ack = '1' AND ack = NACK THEN
-                            dram_i_wb_cyc <= '0';
                             dram := 0;
                             ack := 0;
                             full := full + 1;
+                            dram_i_wb_cyc <= '0';                            
                             dram_state <= IDLE;
                         END IF;
                     
@@ -214,11 +214,11 @@ BEGIN
                             dram_o_buff_wr_en <= '0';
                         END if;                        
                         IF dram_i_wb_stb = '0' AND o_wb_ack = '1' AND ack = NACK THEN
-                            dram_i_wb_cyc <= '0';
-                            dram_start <= '1';
                             dram := 0;
                             ack := 0;
                             full := full + 1;
+                            dram_i_wb_cyc <= '0';
+                            dram_start <= '1';                           
                             dram_state <= WAIT_FOR;
                         END IF;
                     

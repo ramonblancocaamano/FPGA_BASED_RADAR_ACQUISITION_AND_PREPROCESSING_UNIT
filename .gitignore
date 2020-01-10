@@ -16,7 +16,6 @@
 *.opt
 *.ini
 *.rst
-*.xdc
 FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT.runs/clk_wiz_0_synth_1/__synthesis_is_complete__
 *.dcp
 *.vds

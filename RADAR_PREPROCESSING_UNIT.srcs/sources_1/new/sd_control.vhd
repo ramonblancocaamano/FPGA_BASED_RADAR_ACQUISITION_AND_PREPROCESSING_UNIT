@@ -79,9 +79,16 @@ BEGIN
 
     PROCESS(clk_50)
     BEGIN
-        IF rst = '1' THEN               
+        IF rst = '1' THEN
+                state <= IDLE;
+                counter_data := 0;
+                counter_packets := 0;
+                addr := 0;
+                addr_packets := 0;               
                 sd_rd_trigger_ok <= '0';
+                sd_rd_continue <= '0';
                 sd_wr_trigger <= '0';
+                sd_wr_continue_ok <= '0';
                 sd_i_buff_rd_en <= '0';
                 sd_o_buff_wr_en <= '0';
                 sd_i_rst <= '1'; 
@@ -89,12 +96,7 @@ BEGIN
                 sd_i_rd_en <= '0';
                 sd_i_addr <= (OTHERS => '0');             
                 sd_i_wr <= '0';
-                sd_i_rd <= '0';                                
-                counter_data := 0;
-                counter_packets := 0;
-                addr := 0;
-                addr_packets := 0;                
-                state <= IDLE;
+                sd_i_rd <= '0';                               
         ELSIF RISING_EDGE(clk_50) THEN                
             IF wr_trigger_ok = '1' THEN
                 sd_wr_trigger <= '0';
@@ -111,18 +113,18 @@ BEGIN
             
                 WHEN IDLE =>
                 
-                    sd_i_buff_rd_en <= '0';
+                    counter_data := 0;
+                    addr_packets := 0;
                     sd_o_buff_wr_en <= '0';
                     sd_i_rst <= '0';
                     sd_i_wr <= '0';
-                    sd_i_rd <= '0';
-                    counter_data := 0;
-                    addr_packets := 0;                    
+                    sd_i_rd <= '0';                                        
                     IF rd_trigger = '1' AND o_busy = '0' THEN                        
                         sd_rd_trigger_ok <= '1';
                         sd_i_buff_rd_en <= '1';                        
                         state <= W1;
-                    ELSE sd_i_buff_rd_en <= '0';
+                    ELSE 
+                        sd_i_buff_rd_en <= '0';
                         sd_rd_trigger_ok <= '0';
                     END IF;                      
                 
@@ -139,13 +141,13 @@ BEGIN
                         addr := addr + 1;
                         addr_packets := addr_packets + 1;                        
                         state <= W2;
-                    ELSIF addr_packets >= 16 AND counter_packets < PACKETS-1 THEN                        
-                        sd_rd_continue <= '1';                        
+                    ELSIF addr_packets >= 16 AND counter_packets < PACKETS-1 THEN                                              
                         counter_data := 0;
                         counter_packets := counter_packets + 1;
-                        addr_packets := 0;                       
+                        addr_packets := 0;
+                        sd_rd_continue <= '1';                        
                         state <= IDLE;
-                    ELSIF addr_packets >= 16 AND counter_packets = PACKETS-1 then
+                    ELSIF addr_packets >= 16 AND counter_packets = PACKETS-1 THEN
                         counter_data := 0;
                         counter_packets := 0;                        
                         addr := 0;
@@ -166,28 +168,28 @@ BEGIN
                     sd_i_buff_rd_en <= '0';
                     IF o_wr = '0' THEN
                         IF counter_data < (512-1) THEN
-                            sd_i_wr <= '1';
                             counter_data := counter_data + 1;
+                            sd_i_wr <= '1';
                             state <= W2;
                         ELSE
-                            sd_o_buff_wr_en <= '0';
                             counter_data := 0;
+                            sd_o_buff_wr_en <= '0';                            
                             state <= W1;
                         END IF;
                     END IF;
                 
                 WHEN R1 =>
                 
-                    IF o_busy = '0' AND addr_packets < 16 THEN                        
+                    IF o_busy = '0' AND addr_packets < 16 THEN
+                        addr := addr + 1;
+                        addr_packets := addr_packets + 1;                          
                         sd_i_buff_rd_en <= '1';
                         sd_i_addr <= STD_LOGIC_VECTOR(TO_UNSIGNED(counter_data,32));
-                        addr := addr + 1;
-                        addr_packets := addr_packets + 1;                        
                         state <= R2;                    
                     ELSIF addr_packets >= 16 THEN
-                        sd_wr_trigger <= '1';
                         counter_packets := counter_packets + 1;
-                        addr_packets := 0;                        
+                        addr_packets := 0;
+                        sd_wr_trigger <= '1';                                                
                         state <= WAIT_FOR;  
                     END IF;
                 
@@ -208,8 +210,8 @@ BEGIN
                             counter_data := counter_data + 1;
                             state <= R2;
                         ELSE
-                            sd_i_buff_rd_en <= '0';
                             counter_data := 0;
+                            sd_i_buff_rd_en <= '0';                            
                             state <= R1;
                         END IF;
                     END IF;
