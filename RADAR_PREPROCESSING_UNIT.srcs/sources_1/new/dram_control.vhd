@@ -64,16 +64,10 @@ ARCHITECTURE behavioral OF dram_control IS
     SIGNAL dram_i_wb_stb : STD_LOGIC := '0';  
     SIGNAL dram_i_wb_we : STD_LOGIC := '0';  
     SIGNAL dram_i_wb_addr : STD_LOGIC_VECTOR((AW-1) DOWNTO 0) := (OTHERS => '0'); 
-    SIGNAL dram_o_buff_wr_en : STD_LOGIC := '0';  
+    SIGNAL dram_o_buff_wr_en : STD_LOGIC := '0';
+    SIGNAL full: INTEGER := 0;   
     SIGNAL dram_start : STD_LOGIC := '0';  
-    
-    SHARED VARIABLE fifo : INTEGER := 0;   
-    SHARED VARIABLE dram : INTEGER := 0;
-    SHARED VARIABLE addr: INTEGER := 0; 
-    SHARED VARIABLE ack: INTEGER := 0;    
-    SHARED VARIABLE full: INTEGER := 0; 
-      
-    
+        
 BEGIN
 
     dout <= dram_dout;
@@ -91,8 +85,16 @@ BEGIN
     start <= dram_start;
     
     
-    p0:PROCESS(clk_ref)
+   PROCESS(clk_ref, clk_81)
+    
+        VARIABLE fifo : INTEGER := 0;   
+        VARIABLE dram : INTEGER := 0;
+        VARIABLE addr: INTEGER := 0; 
+        VARIABLE ack: INTEGER := 0;   
+    
     BEGIN
+        
+        -- CLK REFERENCE.
         IF rst = '1' THEN
             fifo := 0;                           
             dram_start <= '0';
@@ -125,17 +127,15 @@ BEGIN
                 
             END CASE;
         END IF;
-    END PROCESS p0;
 
-    p2:PROCESS(clk_81)
-    BEGIN
+        -- CLK 81MHz.
         IF rst = '1' THEN
                 dram := 0;
                 addr := 0;
                 ack := 0;
-                full := 0;
-                dram_start <= '0'; 
+                full <= 0;                
                 dram_dout <= (OTHERS => '0');
+                dram_wr_trigger <= '0'; 
                 dram_o_buff_wr_en <= '0';                
                 dram_i_rst <= '0';                
                 dram_i_wb_cyc <= '0';
@@ -148,7 +148,7 @@ BEGIN
                     ack := ack + 1;
                 END IF;
                 IF wr_trigger_ok = '1' THEN
-                    dram_start <= '0';
+                    dram_wr_trigger <= '0';
                 END IF;
                 CASE dram_state IS
                 
@@ -168,7 +168,7 @@ BEGIN
                         END IF;                       
                         IF full = 32768 THEN                           
                             addr := 0;
-                            full := 0;
+                            full <= 0;
                             dram_state <= RECEIVE;
                         END IF;                    
                     
@@ -187,7 +187,7 @@ BEGIN
                         IF dram_i_wb_stb = '0' AND o_wb_ack = '1' AND ack = NACK THEN
                             dram := 0;
                             ack := 0;
-                            full := full + 1;
+                            full <= full + 1;
                             dram_i_wb_cyc <= '0';                            
                             dram_state <= IDLE;
                         END IF;
@@ -216,9 +216,9 @@ BEGIN
                         IF dram_i_wb_stb = '0' AND o_wb_ack = '1' AND ack = NACK THEN
                             dram := 0;
                             ack := 0;
-                            full := full + 1;
-                            dram_i_wb_cyc <= '0';
-                            dram_start <= '1';                           
+                            full <= full + 1;
+                            dram_wr_trigger <= '1';
+                            dram_i_wb_cyc <= '0';                                                       
                             dram_state <= WAIT_FOR;
                         END IF;
                     
@@ -232,7 +232,7 @@ BEGIN
                         END IF;
                         IF full = 32768 AND wr_trigger_ok = '1' THEN                            
                             addr := 0;
-                            full := 0;
+                            full <= 0;
                             dram_state <= IDLE;                        
                         ELSIF wr_continue = '1' THEN
                             dram_wr_continue_ok <= '1';
@@ -240,8 +240,8 @@ BEGIN
                         END IF;
                     
                 END CASE;
-            END IF;                
-    END PROCESS p2;
+            END IF;
+    END PROCESS;
                                             
     dram_i_buff_rd_en <= '1' WHEN o_wb_stall = '0' AND i_buff_empty = '0' AND dram_state = SEND 
                     ELSE '0';

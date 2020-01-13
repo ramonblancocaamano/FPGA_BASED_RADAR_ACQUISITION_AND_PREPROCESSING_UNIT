@@ -62,3 +62,9 @@ CODE/CODE.runs/ila_0_synth_1/__synthesis_is_complete__
 CODE/CODE.runs/mig_7series_synth_1/__synthesis_is_complete__
 FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT.runs/mig_7series_synth_1/__synthesis_is_complete__
 FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT.runs/fifo_81_50_synth_1/__synthesis_is_complete__
+*.xdc
+*.rpx
+*.incr
+*.rda
+RADAR_PREPROCESSING_UNIT.runs/synth_1/__synthesis_is_complete__
+*.vdi

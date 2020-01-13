@@ -29,17 +29,11 @@ END processing;
 
 ARCHITECTURE behavioral OF processing IS
 
-    SHARED VARIABLE st_enable : BOOLEAN := FALSE;
-    SHARED VARIABLE st_trigger : BOOLEAN := FALSE;
-    
     SIGNAL processing_dout : STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');  
     SIGNAL processing_wr_trigger : STD_LOGIC := '0';
     
-    SIGNAL buff : STD_LOGIC_VECTOR(23 DOWNTO 0) := (OTHERS => '0');
-    
-    SHARED VARIABLE counter_data : INTEGER := 0;
-    SHARED VARIABLE counter_resolution : INTEGER := 0;  
-    
+    SIGNAL buff : STD_LOGIC_VECTOR(23 DOWNTO 0) := (OTHERS => '0');   
+     
     SIGNAL CAST_SHORT : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
     SIGNAL CAST_LONG : STD_LOGIC_VECTOR(11 DOWNTO 0) := (OTHERS => '0');
     SIGNAL FULL : STD_LOGIC_VECTOR(11 DOWNTO 0) := (OTHERS => '1');
@@ -66,74 +60,77 @@ BEGIN
            4096 WHEN 12,
            1 WHEN OTHERS;
     
-    general:PROCESS(clk)
+    PROCESS(clk, clk_radar)
+    
+        VARIABLE st_enable : BOOLEAN := FALSE;
+        VARIABLE st_trigger : BOOLEAN := FALSE;
+        VARIABLE counter_data : INTEGER := 0;
+        VARIABLE counter_resolution : INTEGER := 0;
+        
     BEGIN
-        IF RISING_EDGE(clk) THEN
+        
+    IF rst = '0' AND en_acquire = '1' THEN
+        IF RISING_EDGE(clk_radar) THEN
             IF st_trigger = TRUE THEN
                 processing_wr_trigger <= '1';  
             ELSE
                 processing_wr_trigger <= '0'; 
             END IF;
-            st_trigger := FALSE;  
-        END IF;
-    END PROCESS general;
-    
-    radar:PROCESS(clk_radar)
-    BEGIN
-        IF rst = '0' AND en_acquire = '1' THEN
-            IF RISING_EDGE(clk) THEN
-                IF st_enable = FALSE THEN
-                    IF rd_trigger = '1' THEN
-                        st_enable := TRUE;
-                    ELSE
-                        st_enable := FALSE;
-                        counter_data := 0;
-                        counter_resolution := 0;
-                        buff <= (OTHERS => '0'); 
-                        processing_dout <= (OTHERS => '0'); 
-                    END IF;
-                END IF;
-                IF st_enable = TRUE THEN
-                    IF counter_data < DATA THEN
-                        IF en_resolution = '1' THEN
-                            IF overflow = '1' THEN
-                                buff <= buff + (CAST_LONG & FULL);
-                            ELSE
-                                buff <= buff + (CAST_LONG & din);
-                            END IF;
-                            IF counter_resolution < RES THEN
-                                processing_dout <=  CAST_SHORT & buff((11+resolution) DOWNTO resolution);
-                                st_trigger := TRUE;
-                                counter_resolution := 0;
-                                buff <= (OTHERS => '0'); 
-                            ELSE
-                                counter_resolution := counter_resolution + 1;
-                            END IF;
-                        ELSE 
-                            IF overflow = '1' THEN
-                                processing_dout <= CAST_SHORT & FULL;
-                            ELSE
-                                processing_dout <= CAST_SHORT & din;
-                            END IF;
-                            st_trigger := TRUE;
-                        END IF; 
-                        counter_data := counter_data + 1;
-                    ELSE 
-                        st_enable := FALSE;
-                        counter_data := 0;
-                        counter_resolution := 0;
-                        buff <= (OTHERS => '0'); 
-                        processing_dout <= (OTHERS => '0'); 
-                    END IF;
+            st_trigger := FALSE;
+            IF st_enable = FALSE THEN
+                IF rd_trigger = '1' THEN
+                    st_enable := TRUE;
+                ELSE
+                    st_enable := FALSE;
+                    counter_data := 0;
+                    counter_resolution := 0;
+                    buff <= (OTHERS => '0'); 
+                    processing_dout <= (OTHERS => '0'); 
                 END IF;
             END IF;
-        ELSE
-            st_enable := FALSE;
-            counter_data := 0;
-            counter_resolution := 0;
-            buff <= (OTHERS => '0'); 
-            processing_dout <= (OTHERS => '0'); 
+            IF st_enable = TRUE THEN
+                IF counter_data < DATA THEN
+                    IF en_resolution = '1' THEN
+                        IF overflow = '1' THEN
+                            buff <= buff + (CAST_LONG & FULL);
+                        ELSE
+                            buff <= buff + (CAST_LONG & din);
+                        END IF;
+                        IF counter_resolution < RES THEN
+                            processing_dout <=  CAST_SHORT & buff((11+resolution) DOWNTO resolution);
+                            st_trigger := TRUE;
+                            counter_resolution := 0;
+                            buff <= (OTHERS => '0'); 
+                        ELSE
+                            counter_resolution := counter_resolution + 1;
+                        END IF;
+                    ELSE 
+                        IF overflow = '1' THEN
+                            processing_dout <= CAST_SHORT & FULL;
+                        ELSE
+                            processing_dout <= CAST_SHORT & din;
+                        END IF;
+                        st_trigger := TRUE;
+                    END IF; 
+                    counter_data := counter_data + 1;
+                ELSE 
+                    st_enable := FALSE;
+                    counter_data := 0;
+                    counter_resolution := 0;
+                    buff <= (OTHERS => '0'); 
+                    processing_dout <= (OTHERS => '0'); 
+                END IF;
+            END IF;
         END IF;
-    END PROCESS radar;
+    ELSE
+        st_enable := FALSE;
+        st_trigger := FALSE;
+        counter_data := 0;
+        counter_resolution := 0;
+        buff <= (OTHERS => '0'); 
+        processing_dout <= (OTHERS => '0'); 
+    END IF;
+
+    END PROCESS;
 
 END behavioral;

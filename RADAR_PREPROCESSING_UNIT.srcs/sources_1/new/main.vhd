@@ -26,7 +26,8 @@ ENTITY main IS
         radar_overflow: IN STD_LOGIC;        
         sw_mode : IN STD_LOGIC;
         sw_resolution : IN STD_LOGIC;        
-        btn_save : IN STD_LOGIC;              
+        btn_save : IN STD_LOGIC; 
+        btn_record : IN STD_LOGIC;             
         btn_up : IN STD_LOGIC;
         btn_down : IN STD_LOGIC;
         i_miso : IN STD_LOGIC;
@@ -428,21 +429,21 @@ BEGIN
             i => btn_down,
             o => btn_down_0
         );
-     
+    
     INST_DEMUX2_0 : demux2 
         PORT MAP(
             sel => sw_mode,
-            i => interface_rd_trigger_ok,
-            o0 => dram_wr_trigger_ok,
-            o1 => memory_wr_trigger_ok
+            i => dram_wr_trigger,
+            o0 => interface_rd_trigger,
+            o1 => memory_rd_trigger
         );
-                      
+        
     INST_DEMUX2_1 : demux2 
         PORT MAP(
             sel => sw_mode,
-            i => interface_rd_continue,
-            o0 => dram_wr_continue,
-            o1 => memory_wr_continue
+            i => dram_wr_continue_ok,
+            o0 => interface_rd_continue_ok,
+            o1 => memory_rd_continue_ok
         );
                                 
     INST_DEMUX2_2 : demux2 
@@ -456,22 +457,6 @@ BEGIN
     INST_DEMUX2_3 : demux2 
         PORT MAP(
             sel => sw_mode,
-            i => dram_wr_trigger,
-            o0 => interface_rd_trigger,
-            o1 => memory_rd_trigger
-        );
-        
-    INST_DEMUX2_4 : demux2 
-        PORT MAP(
-            sel => sw_mode,
-            i => dram_wr_continue_ok,
-            o0 => interface_rd_continue_ok,
-            o1 => memory_rd_continue_ok
-        );
- 
-    INST_DEMUX2_5 : demux2 
-        PORT MAP(
-            sel => sw_mode,
             i => dram_o_buff_wr_en,
             o0 => f_81_eth_wr_en,
             o1 => f_81_50_wr_en
@@ -483,7 +468,7 @@ BEGIN
             i => dram_dout,
             o0 => f_81_eth_din,
             o1 => f_81_50_din
-        );
+        );       
           
     INST_DRAM : dram
          PORT MAP( 
@@ -492,7 +477,7 @@ BEGIN
             clk_81 => clk_81,
             clk_200 => clk_200,       
             din => f_ref_81_dout,
-            dout => f_81_50_din,
+            dout => dram_dout,
             trigger => dram_trigger,
             wr_trigger => dram_wr_trigger,
             wr_trigger_ok => dram_wr_trigger_ok,
@@ -501,7 +486,7 @@ BEGIN
             i_buff_rd_en => f_ref_81_rd_en,
             i_buff_wr_en => f_ref_81_wr_en,
             i_buff_empty => f_ref_81_empty,
-            o_buff_wr_en => f_81_50_wr_en,
+            o_buff_wr_en => dram_o_buff_wr_en,
             o_ddr_reset_n => o_ddr_reset_n,
             o_ddr_ras_n => o_ddr_ras_n,
             o_ddr_cas_n => o_ddr_cas_n,
@@ -574,28 +559,12 @@ BEGIN
    INST_MUX2_0 : mux2 
         PORT MAP(
             sel => sw_mode,
-            i0 => dram_wr_trigger,
-            i1 => memory_wr_trigger,
-            o => interface_rd_trigger
-        );
-        
-   INST_MUX2_1 : mux2 
-        PORT MAP(
-            sel => sw_mode,
-            i0 => dram_wr_continue_ok,
-            i1 => memory_wr_continue_ok,
-            o => interface_rd_continue_ok
-        );
-   
-   INST_MUX2_2 : mux2 
-        PORT MAP(
-            sel => sw_mode,
             i0 => interface_rd_trigger_ok,
             i1 => memory_rd_trigger_ok,
             o => dram_wr_trigger_ok
         );
 
-    INST_MUX2_3 : mux2 
+    INST_MUX2_1 : mux2 
         PORT MAP(
             sel => sw_mode,
             i0 => interface_rd_continue,

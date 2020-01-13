@@ -36,9 +36,6 @@ ARCHITECTURE behavioral OF ethernet_control IS
     SIGNAL eth_i_buff_rd_en : STD_LOGIC := '0';  
     SIGNAL eth_start : STD_LOGIC := '0';
    
-    SHARED VARIABLE counter_data : INTEGER := 0;
-    SHARED VARIABLE counter_packets : INTEGER := 0;
-   
 BEGIN
     
     rd_trigger_ok <=  eth_rd_trigger_ok;              
@@ -48,6 +45,10 @@ BEGIN
     
     
     PROCESS(clk)
+    
+        VARIABLE counter_data : INTEGER := 0;
+        VARIABLE counter_packets : INTEGER := 0;
+    
     BEGIN
         IF rst = '1' THEN
             state <= IDLE;

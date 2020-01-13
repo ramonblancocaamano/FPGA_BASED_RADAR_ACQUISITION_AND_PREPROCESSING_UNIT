@@ -39,7 +39,7 @@ ENTITY sd_control IS
 END sd_control;
 
 ARCHITECTURE behavioral OF sd_control IS
-
+    
     TYPE ST_SD is (IDLE, W1, W2, W3, R1, R2, R3, WAIT_FOR);
     SIGNAL state : ST_SD := IDLE;
     SIGNAL sd_fsm : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
@@ -57,11 +57,6 @@ ARCHITECTURE behavioral OF sd_control IS
     SIGNAL sd_i_wr : STD_LOGIC := '0';
     SIGNAL sd_i_rd : STD_LOGIC := '0';   
     
-    SHARED VARIABLE counter_data : INTEGER := 0;
-    SHARED VARIABLE counter_packets : INTEGER := 0;    
-    SHARED VARIABLE addr: INTEGER := 0;
-    SHARED VARIABLE addr_packets: INTEGER := 0;
-    
 BEGIN
     
     rd_trigger_ok <= sd_rd_trigger_ok;
@@ -78,6 +73,12 @@ BEGIN
     i_rd <= sd_i_rd; 
 
     PROCESS(clk_50)
+    
+        VARIABLE counter_data : INTEGER := 0;
+        VARIABLE counter_packets : INTEGER := 0;    
+        VARIABLE addr: INTEGER := 0;
+        VARIABLE addr_packets: INTEGER := 0;
+        
     BEGIN
         IF rst = '1' THEN
                 state <= IDLE;
