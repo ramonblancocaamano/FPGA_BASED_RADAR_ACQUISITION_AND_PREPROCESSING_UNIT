@@ -156,7 +156,7 @@ BEGIN
                     
                         dram := 0;
                         ack := 0; 
-                        dout <= (OTHERS => '0'); 
+                        dram_dout <= (OTHERS => '0'); 
                         dram_o_buff_wr_en <= '0';
                         dram_i_rst <= '1';                                           
                         dram_i_wb_cyc <= '0';
@@ -208,7 +208,7 @@ BEGIN
                             dram_i_wb_stb <= '0';
                         END if;                        
                         IF o_wb_ack = '1' THEN
-                            dout <= o_wb_data;
+                            dram_dout <= o_wb_data;
                             dram_o_buff_wr_en <= '1';
                         ELSE 
                             dram_o_buff_wr_en <= '0';
@@ -225,7 +225,7 @@ BEGIN
                     WHEN WAIT_FOR =>
                     
                         IF o_wb_ack = '1' THEN
-                            dout <= o_wb_data;
+                            dram_dout <= o_wb_data;
                             dram_o_buff_wr_en <= '1';
                         ELSE 
                             dram_o_buff_wr_en <= '0';

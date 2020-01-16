@@ -39,14 +39,12 @@ END control;
 
 
 ARCHITECTURE behavioral OF control IS
-        
-    SIGNAL aux : STD_LOGIC := '0';
-    
+ 
     SIGNAL main_en_acquire : STD_LOGIC := '0';
     SIGNAL main_en_save : STD_LOGIC := '0';
     SIGNAL main_resolution: INTEGER := RES;
     SIGNAL main_arming : STD_LOGIC := '0';
-
+    
 BEGIN
 
       en_acquire <= main_en_acquire;
@@ -56,66 +54,61 @@ BEGIN
   
     PROCESS(clk)
     
-        VARIABLE st_reset : BOOLEAN := FALSE;
         VARIABLE st_arm : BOOLEAN := FALSE;
-        VARIABLE st_arm1 : BOOLEAN := FALSE;
+        VARIABLE st_reset : BOOLEAN := FALSE;        
         VARIABLE st_rec : BOOLEAN := FALSE;
         VARIABLE st_save : BOOLEAN := FALSE;
         VARIABLE st_updown : BOOLEAN := FALSE;
     
     BEGIN
-    
-        st_arm := st_arm1;
-    
-        -- RESET.        
+            
         IF rst = '1' THEN 
-            IF st_reset = FALSE THEN            
-                IF main_en_acquire = '1' THEN
-                    st_arm := TRUE;
+                IF st_reset = FALSE THEN            
+                    IF main_en_acquire = '1' THEN
+                        st_arm := TRUE;
+                    END IF;
+                    st_reset := TRUE;
+                    st_rec := FALSE;
+                    st_save := FALSE;
+                    st_updown := FALSE;
+                    main_en_acquire <= '0';
+                    main_en_save <= '0';
+                    main_resolution <= RES;                
                 END IF;
-                st_rec := FALSE;
-                st_save := FALSE;
-                st_updown := FALSE;
-                main_en_acquire <= '0';
-                main_en_save <= '0';
-                main_resolution <= RES;
-                st_reset := TRUE;
-            END IF;
-        ELSE 
+        ELSIF RISING_EDGE(clk) THEN
+        
             st_reset := FALSE;
-        END IF;
-        
-        -- ARMING.        
-        IF RISING_EDGE(clk) THEN
+                        
+            -- ARMING.       
             IF st_arm = TRUE THEN
-                main_arming <= '1';  
+                main_arming <= '1';
+                st_arm := FALSE;   
             ELSE
-                main_arming <= '0'; 
-            END IF;
-            st_arm := FALSE;  
-        END IF;
-        
-        -- RECORD.
-        IF st_reset = FALSE AND st_save = FALSE AND st_updown = FALSE THEN
-            IF RISING_EDGE(clk) THEN
+                main_arming <= '0';
+                st_arm := FALSE;  
+            END IF;             
+            
+            -- RECORD.
+            IF st_reset = FALSE AND st_save = FALSE AND st_updown = FALSE THEN
                 IF btn_record = '1' THEN
                     IF st_rec = FALSE THEN  
                         st_arm := TRUE;
-                        aux <= NOT main_en_acquire;
-                        main_en_acquire <= aux;
-                        main_en_save <= '0';
                         st_rec := TRUE;
+                        main_en_save <= '0';
+                        IF main_en_acquire = '1' THEN
+                            main_en_acquire <= '0';
+                        ELSE
+                            main_en_acquire <= '1';
+                        END IF;
                     END IF;
                 ELSE
                     st_rec := FALSE;
-                END IF;
+                END IF; 
             END IF; 
-        END IF; 
-     
-        -- SAVE.        
-        IF st_reset = FALSE AND st_rec = FALSE AND st_updown = FALSE THEN
-            IF sw_mode = '0' THEN
-                IF RISING_EDGE(clk) THEN 
+         
+            -- SAVE.        
+            IF st_reset = FALSE AND st_rec = FALSE AND st_updown = FALSE THEN
+                IF sw_mode = '0' THEN
                     IF btn_save = '1' THEN
                         IF st_save = FALSE THEN
                             IF main_en_acquire = '1' THEN
@@ -127,15 +120,13 @@ BEGIN
                         END IF;
                     ELSE
                         st_save := FALSE;  
-                    END IF;
+                    END IF;                
                 END IF;
-            END IF;
-        END IF; 
-        
-       -- UP/DOWN.
-       IF st_reset = FALSE AND st_rec = FALSE AND st_save = FALSE THEN
-            IF sw_resolution = '1' THEN
-                IF RISING_EDGE(clk) THEN
+            END IF; 
+            
+           -- UP/DOWN.
+           IF st_reset = FALSE AND st_rec = FALSE AND st_save = FALSE THEN
+                IF sw_resolution = '1' THEN
                     IF btn_up = '1' OR btn_down = '1' THEN
                         IF st_updown = FALSE THEN
                             IF main_en_acquire = '1' THEN
@@ -152,10 +143,10 @@ BEGIN
                     ELSE
                         st_updown := FALSE;
                     END IF;
-                END IF;
+                END IF; 
             END IF; 
-        END IF; 
         
+        END IF;
     END PROCESS;
 
 END behavioral;

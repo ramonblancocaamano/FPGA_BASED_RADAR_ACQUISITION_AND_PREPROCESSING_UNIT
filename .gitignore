@@ -68,3 +68,10 @@ FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT.runs/fifo_81_50_synth_1/__sy
 *.rda
 RADAR_PREPROCESSING_UNIT.runs/synth_1/__synthesis_is_complete__
 *.vdi
+*.0
+*.rtd
+*.map
+*.super
+*.0_temp
+RADAR_PREPROCESSING_UNIT.runs/synth_1/__synthesis_is_running__
+*.gnd
