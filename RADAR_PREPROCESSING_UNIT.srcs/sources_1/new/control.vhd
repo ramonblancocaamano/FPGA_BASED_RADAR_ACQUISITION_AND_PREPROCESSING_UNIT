@@ -2,17 +2,7 @@
 -- @FILE : control.vhd 
 -- @AUTHOR: BLANCO CAAMANO, RAMON. <ramonblancocaamano@gmail.com> 
 -- 
--- @ABOUT:
--- TRIGGER[IN]: CONTROL SIGNAL FOR ASCENDING FREQUENCY INDICATION.
--- SWITCH_MODE[IN]: SELECT STANDALONE(ST)/PC MODE.
--- SWITCH_RESOLUTION[IN]: SELECT RESOLUTION ON/OFF. SIGNAL PRE-PROCESSING BASED ON 
---                        SAMPLE WEIGHTING.
--- BUTTON_RECORD[INT]: INITIALIZE ACQUISITION SYSTEM.
--- BUTTON_SAVE[IN]: DUMPS MEMORY(SD) DATA TO THE INTERFACE. NOTE: ONLY AVAILABLE IN 
---                  STANDALONE(ST) MODE.
--- BUTTON__UP[IN]: RESOLUTION HIGHER WEIGHTED SAMPLING.
--- BUTTON_DOWN[IN]: RESOLUTION LOWER WEIGHTED SAMPLING.
--- ARMING[OUT]: RADAR RESET/ENABLE.
+-- @ABOUT: GENERAL MANAGEMENT OF THE SYSTEM FUNCTIONALITIES. 
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -51,8 +41,9 @@ BEGIN
       en_save <= main_en_save;
       resolution <= main_resolution;
       arming <= main_arming;
-  
-    PROCESS(clk)
+    
+    PROCESS(rst, clk, sw_mode, sw_resolution, btn_record, btn_save, btn_up, btn_down, 
+        main_en_acquire, main_en_save, main_resolution, main_arming )
     
         VARIABLE st_arm : BOOLEAN := FALSE;
         VARIABLE st_reset : BOOLEAN := FALSE;        
@@ -108,7 +99,7 @@ BEGIN
          
             -- SAVE.        
             IF st_reset = FALSE AND st_rec = FALSE AND st_updown = FALSE THEN
-                IF sw_mode = '0' THEN
+                IF sw_mode = '1' THEN
                     IF btn_save = '1' THEN
                         IF st_save = FALSE THEN
                             IF main_en_acquire = '1' THEN

@@ -10,6 +10,7 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY debouncer IS
     PORT(
+        rst : IN STD_LOGIC;
         clk : IN STD_LOGIC;
         i : IN STD_LOGIC;
         o : OUT STD_LOGIC
@@ -18,26 +19,33 @@ END debouncer;
 
 ARCHITECTURE behavioral OF debouncer IS
 
-    CONSTANT SIZE : INTEGER := 3;    
-    SIGNAL previous : STD_LOGIC := '0';
-    SIGNAL counter : STD_LOGIC_vector(SIZE DOWNTO 0) := (OTHERS => '0');
-
+    CONSTANT MAX : INTEGER := 8;
+    SIGNAL previous : STD_LOGIC := '0';    
+    SIGNAL debouncer_o : STD_LOGIC := '0';
+        
 BEGIN
 
-    PROCESS(clk)
+    o <= debouncer_o;
     
-    BEGIN
+    PROCESS(rst, clk, i)
     
-        IF RISING_EDGE(clk) THEN
-            IF (previous xor i) = '1' THEN
-                counter <= (others => '0');
-                previous <= i;
-            ELSIF counter(SIZE) = '0' THEN
-                counter <= counter + 1;
-            ELSE
-                o <= previous;
-            END IF;
-        END IF;
+        VARIABLE counter : INTEGER := 0;
         
-    END process;
+    BEGIN
+        
+        IF rst = '1' THEN
+            counter := 0; 
+            debouncer_o <= '0';
+        ELSIF RISING_EDGE(clk) THEN
+            IF (previous XOR i) = '1' THEN
+                counter := 0;
+                previous <= i;
+            ELSIF counter < MAX THEN
+                counter := counter + 1;
+            ELSE
+                debouncer_o <= previous;
+            END IF;
+        END IF; 
+        
+    END PROCESS;
 END behavioral;

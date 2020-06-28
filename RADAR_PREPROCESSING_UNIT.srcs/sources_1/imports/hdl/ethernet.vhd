@@ -13,6 +13,12 @@ Library UNISIM;
 use UNISIM.vcomponents.all;
 
 entity ethernet is
+    GENERIC( 
+        ETH_SRC_MAC : STD_LOGIC_VECTOR(47 DOWNTO 0);
+        ETH_DST_MAC : STD_LOGIC_VECTOR(47 DOWNTO 0);
+        IP_SRC_ADDR : STD_LOGIC_VECTOR(31 DOWNTO 0);
+        IP_DST_ADDR : STD_LOGIC_VECTOR(31 DOWNTO 0)
+    );
     Port ( clock   : in    STD_LOGIC;
            -- Switches             
            -- control channel
@@ -144,11 +150,11 @@ begin
    ----------------------------------------------------
 data: nibble_data generic map (
       -- Details for the ARTY's IP settings 
-      eth_src_mac => x"DEADBEEF0123", -- A completely 'random' MAC :)
-      ip_src_addr => x"0A0A0A0A",     -- 10.10.10.10
+      eth_src_mac => ETH_SRC_MAC,
+      ip_src_addr => IP_SRC_ADDR,
       -- details of the destination (broadcast)
-      eth_dst_mac => x"F0795965E65D", -- My laptop's MAC address
-      ip_dst_addr => x"C0A8010B"      -- 10.10.10.1
+      eth_dst_mac => ETH_DST_MAC,
+      ip_dst_addr => IP_DST_ADDR
   ) port map (
       clk        => eth_tx_clk,
       start      => start_sending,

@@ -2,7 +2,7 @@
 -- @FILE : processing.vhd 
 -- @AUTHOR: BLANCO CAAMANO, RAMON. <ramonblancocaamano@gmail.com> 
 -- 
--- @ABOUT: .
+-- @ABOUT: ACQUISITION & SIGNAL PRE-PROCESSING OF THE SAMPLED DATA.
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -10,30 +10,30 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY processing is
     GENERIC( 
-        DATA : INTEGER
+        NDATA : INTEGER
     );
     PORT(
-        rst: IN STD_LOGIC;
-        clk : IN STD_LOGIC;  
-        clk_radar : IN STD_LOGIC;      
+        rst: IN STD_LOGIC; 
+        clk_radar : IN STD_LOGIC; 
+        trigger_radar : IN STD_LOGIC;     
         en_acquire : IN STD_LOGIC;
         en_resolution : IN STD_LOGIC; 
         resolution: IN INTEGER;       
         din: IN STD_LOGIC_VECTOR (11 downto 0);
         overflow: IN STD_LOGIC;
         dout : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-        rd_trigger : IN STD_LOGIC;
-        wr_trigger : OUT STD_LOGIC
+        hsk_rd1 : OUT STD_LOGIC;
+        hsk_rd_ok1 : IN STD_LOGIC;     
+        buff_wr_en : OUT STD_LOGIC 
     );
 END processing;
 
 ARCHITECTURE behavioral OF processing IS
 
-    SIGNAL processing_dout : STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');  
-    SIGNAL processing_wr_trigger : STD_LOGIC := '0';
+    SIGNAL p_dout : STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');  
+    SIGNAL p_hsk_rd1 : STD_LOGIC := '0';
+    SIGNAL p_buff_wr_en : STD_LOGIC := '0';
     
-    SIGNAL buff : STD_LOGIC_VECTOR(23 DOWNTO 0) := (OTHERS => '0');   
-     
     SIGNAL CAST_SHORT : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
     SIGNAL CAST_LONG : STD_LOGIC_VECTOR(11 DOWNTO 0) := (OTHERS => '0');
     SIGNAL FULL : STD_LOGIC_VECTOR(11 DOWNTO 0) := (OTHERS => '1');
@@ -41,8 +41,9 @@ ARCHITECTURE behavioral OF processing IS
 
 BEGIN
 
-    dout <= processing_dout;  
-    wr_trigger <= processing_wr_trigger;
+    dout <= p_dout;  
+    hsk_rd1 <= p_hsk_rd1;
+    buff_wr_en <= p_buff_wr_en;
 
     WITH resolution SELECT
     RES <= 1 WHEN 0,
@@ -60,77 +61,71 @@ BEGIN
            4096 WHEN 12,
            1 WHEN OTHERS;
     
-    PROCESS(clk, clk_radar)
+    PROCESS(rst, clk_radar, en_acquire, en_resolution, resolution, din, overflow, trigger_radar,
+        p_dout, p_hsk_rd1, p_buff_wr_en, CAST_SHORT, CAST_LONG, FULL, RES)
     
         VARIABLE st_enable : BOOLEAN := FALSE;
-        VARIABLE st_trigger : BOOLEAN := FALSE;
-        VARIABLE counter_data : INTEGER := 0;
-        VARIABLE counter_resolution : INTEGER := 0;
+        VARIABLE counter0 : INTEGER := 0;
+        VARIABLE counter1 : INTEGER := 0;
+        VARIABLE counter_res : INTEGER := 1;
         
     BEGIN
         
-    IF rst = '0' AND en_acquire = '1' THEN
-        IF RISING_EDGE(clk_radar) THEN
-            IF st_trigger = TRUE THEN
-                processing_wr_trigger <= '1';  
-            ELSE
-                processing_wr_trigger <= '0'; 
+        IF rst = '1' OR en_acquire = '0' THEN
+            st_enable := FALSE;
+            counter0 := 0;
+            counter1 := 0; 
+            counter_res := 1;
+            p_hsk_rd1 <= '0'; 
+            p_dout <= (OTHERS => '0'); 
+            p_buff_wr_en <= '0';
+        ELSIF RISING_EDGE(clk_radar) THEN
+            IF hsk_rd_ok1 = '1' THEN
+               p_hsk_rd1 <= '0'; 
             END IF;
-            st_trigger := FALSE;
             IF st_enable = FALSE THEN
-                IF rd_trigger = '1' THEN
-                    st_enable := TRUE;
+                IF trigger_radar = '1' THEN
+                    st_enable := TRUE;                    
                 ELSE
                     st_enable := FALSE;
-                    counter_data := 0;
-                    counter_resolution := 0;
-                    buff <= (OTHERS => '0'); 
-                    processing_dout <= (OTHERS => '0'); 
+                    counter0 := 0;
+                    counter_res := 1;
+                    p_dout <= (OTHERS => '0'); 
+                    p_buff_wr_en <= '0';
                 END IF;
             END IF;
             IF st_enable = TRUE THEN
-                IF counter_data < DATA THEN
-                    IF en_resolution = '1' THEN
-                        IF overflow = '1' THEN
-                            buff <= buff + (CAST_LONG & FULL);
-                        ELSE
-                            buff <= buff + (CAST_LONG & din);
-                        END IF;
-                        IF counter_resolution < RES THEN
-                            processing_dout <=  CAST_SHORT & buff((11+resolution) DOWNTO resolution);
-                            st_trigger := TRUE;
-                            counter_resolution := 0;
-                            buff <= (OTHERS => '0'); 
-                        ELSE
-                            counter_resolution := counter_resolution + 1;
-                        END IF;
+                IF counter1 > NDATA -1 THEN
+                    counter1 := 0; 
+                    p_hsk_rd1 <= '1'; 
+                END IF;
+                IF counter0 < NDATA THEN            
+                    IF en_resolution = '1'AND counter_res < RES THEN
+                        counter_res := counter_res + 1;
+                        p_buff_wr_en <= '0';
+                        p_dout <= (OTHERS => '0');  
                     ELSE 
                         IF overflow = '1' THEN
-                            processing_dout <= CAST_SHORT & FULL;
+                            p_dout <= CAST_SHORT & FULL;
                         ELSE
-                            processing_dout <= CAST_SHORT & din;
+                            p_dout <= CAST_SHORT & din;
                         END IF;
-                        st_trigger := TRUE;
-                    END IF; 
-                    counter_data := counter_data + 1;
+                        counter1 := counter1 + 1; 
+                        counter_res := 1;
+                        p_buff_wr_en <= '1'; 
+                    END IF;
+                    counter0 := counter0 + 1;
                 ELSE 
                     st_enable := FALSE;
-                    counter_data := 0;
-                    counter_resolution := 0;
-                    buff <= (OTHERS => '0'); 
-                    processing_dout <= (OTHERS => '0'); 
-                END IF;
-            END IF;
+                    counter0 := 0;
+                    counter_res := 1;                     
+                    p_buff_wr_en <= '0'; 
+                    p_dout <= (OTHERS => '0'); 
+                END IF;  
+            END IF;     
         END IF;
-    ELSE
-        st_enable := FALSE;
-        st_trigger := FALSE;
-        counter_data := 0;
-        counter_resolution := 0;
-        buff <= (OTHERS => '0'); 
-        processing_dout <= (OTHERS => '0'); 
-    END IF;
-
+        
     END PROCESS;
 
 END behavioral;
+

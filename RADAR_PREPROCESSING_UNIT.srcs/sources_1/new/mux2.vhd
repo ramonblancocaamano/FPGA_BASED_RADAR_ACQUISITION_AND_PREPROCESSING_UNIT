@@ -2,7 +2,7 @@
 -- @FILE : mux2.vhd 
 -- @AUTHOR: BLANCO CAAMANO, RAMON. <ramonblancocaamano@gmail.com> 
 -- 
--- @ABOUT: .
+-- @ABOUT: MULTIPLEX. MULTIPLE-INPUT, SINGLE-OUTPUT.
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
