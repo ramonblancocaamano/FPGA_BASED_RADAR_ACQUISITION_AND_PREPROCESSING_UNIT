@@ -15,9 +15,6 @@ ENTITY main IS
         NDATA : INTEGER := 4;
         NPACKETS : INTEGER := 32768;
         RES : INTEGER := 1;
-        PAYLOAD: INTEGER := 1024;
-        LOWER_BOUND : UNSIGNED(11 DOWNTO 0) := x"058";  
-        HIGHER_BOUND : UNSIGNED(11 DOWNTO 0) := x"875"; 
         ETH_SRC_MAC : STD_LOGIC_VECTOR(47 DOWNTO 0) := x"DEADBEEF0123"; -- RANDOM.
         ETH_DST_MAC : STD_LOGIC_VECTOR(47 DOWNTO 0) := x"000EC6E1F958"; -- PC.
         IP_SRC_ADDR : STD_LOGIC_VECTOR(31 DOWNTO 0) := x"0A0A0A0A"; -- 10.10.10.10
@@ -175,9 +172,9 @@ ARCHITECTURE behavioral OF main IS
     COMPONENT ethernet_interface IS
         GENERIC( 
             NDATA : INTEGER;
-            PAYLOAD: INTEGER;
-            LOWER_BOUND : UNSIGNED(11 DOWNTO 0);  
-            HIGHER_BOUND : UNSIGNED(11 DOWNTO 0); 
+            PAYLOAD: INTEGER := 1024;
+            LOWER_BOUND : UNSIGNED(11 DOWNTO 0) := x"058";  
+            HIGHER_BOUND : UNSIGNED(11 DOWNTO 0) := x"875"; 
             ETH_SRC_MAC : STD_LOGIC_VECTOR(47 DOWNTO 0);
             ETH_DST_MAC : STD_LOGIC_VECTOR(47 DOWNTO 0);
             IP_SRC_ADDR : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -630,10 +627,7 @@ BEGIN
         
     INST_ETHERNET_INTERFACE : ethernet_interface
         GENERIC MAP( 
-            NDATA => NDATA,
-            PAYLOAD => PAYLOAD,
-            LOWER_BOUND => LOWER_BOUND,  
-            HIGHER_BOUND => HIGHER_BOUND, 
+            NDATA => NDATA, 
             ETH_SRC_MAC => ETH_SRC_MAC,
             ETH_DST_MAC => ETH_DST_MAC,
             IP_SRC_ADDR => IP_SRC_ADDR,
