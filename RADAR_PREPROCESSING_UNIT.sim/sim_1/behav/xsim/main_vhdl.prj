@@ -1,0 +1,26 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_crc32.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_preamble.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_seq_num.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/control.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/debouncer.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2_32b.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram_control.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/ethernet_control.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/holder.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/interface.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/memory.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/mux2.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/mux2_16b.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/nibble_data.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/processing.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/sd_control.vhd" \
+"../../../../RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd" \
+
+# Do not sort compile order
+nosort

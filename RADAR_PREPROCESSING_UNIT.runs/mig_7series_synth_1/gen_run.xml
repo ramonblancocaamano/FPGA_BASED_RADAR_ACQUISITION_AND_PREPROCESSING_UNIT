@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="mig_7series_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1578849334">
+  <File Type="PA-TCL" Name="mig_7series.tcl"/>
+  <File Type="REPORTS-TCL" Name="mig_7series_reports.tcl"/>
+  <File Type="RDS-RDS" Name="mig_7series.vds"/>
+  <File Type="RDS-UTIL" Name="mig_7series_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="mig_7series_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="mig_7series.dcp"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/mig_7series">
+    <File Path="$PSRCDIR/sources_1/ip/mig_7series/mig_7series.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT/FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series.xci"/>
+        <Attr Name="ImportTime" Val="1575832411"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="mig_7series"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/mig_7series">
+    <File Path="$PSRCDIR/sources_1/ip/mig_7series/mig_7series.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT/FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series.xci"/>
+        <Attr Name="ImportTime" Val="1575832411"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="mig_7series"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

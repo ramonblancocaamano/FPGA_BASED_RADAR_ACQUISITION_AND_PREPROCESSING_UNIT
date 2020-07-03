@@ -1,0 +1,10 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'control'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/debouncer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'debouncer'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/holder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'holder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/processing.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'processing'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'main'

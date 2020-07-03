@@ -1,0 +1,16 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|         clk_50_clk_wiz_0 |         clk_81_clk_wiz_0 |                                        INST_DRAM/INST_DRAM_CONTROL/FSM_sequential_dram_state_reg[0]_rep/D|
+|         clk_50_clk_wiz_0 |         clk_81_clk_wiz_0 |                                            INST_DRAM/INST_DRAM_CONTROL/FSM_sequential_dram_state_reg[0]/D|
+|         clk_50_clk_wiz_0 |         clk_81_clk_wiz_0 |                                                     INST_DRAM/INST_DRAM_CONTROL/dram_wr_continue_ok_reg/D|
+|         clk_50_clk_wiz_0 |         clk_81_clk_wiz_0 |                                     INST_DRAM/INST_DRAM_CONTROL/FSM_sequential_dram_state_reg[0]_rep__0/D|
+|         clk_81_clk_wiz_0 |         clk_50_clk_wiz_0 |                                                          INST_MEMORY/INST_SD_CONTROL/sd_rd_continue_reg/D|
+|         clk_81_clk_wiz_0 |         clk_50_clk_wiz_0 |                                                         INST_MEMORY/INST_SD_CONTROL/sd_i_buff_rd_en_reg/D|
+|         clk_50_clk_wiz_0 |         clk_81_clk_wiz_0 |INST_DRAM/INST_ILA_0/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[0]/D|
+|         clk_81_clk_wiz_0 |         clk_50_clk_wiz_0 |                                                        INST_MEMORY/INST_SD_CONTROL/sd_rd_trigger_ok_reg/D|
+|         clk_50_clk_wiz_0 |         clk_81_clk_wiz_0 |                                 INST_DRAM/INST_ILA_0/inst/ila_core_inst/shifted_data_in_reg[7][82]_srl8/D|
+|         clk_50_clk_wiz_0 |         clk_81_clk_wiz_0 |                                                         INST_DRAM/INST_DRAM_CONTROL/dram_wr_trigger_reg/D|
+|         clk_50_clk_wiz_0 |         clk_81_clk_wiz_0 |                                 INST_DRAM/INST_ILA_0/inst/ila_core_inst/shifted_data_in_reg[7][83]_srl8/D|
+|         clk_50_clk_wiz_0 |         clk_81_clk_wiz_0 |INST_DRAM/INST_ILA_0/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[0]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

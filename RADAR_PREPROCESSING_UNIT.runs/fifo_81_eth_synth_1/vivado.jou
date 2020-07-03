@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Dec  8 20:31:43 2019
+# Process ID: 20536
+# Current directory: C:/Users/ramon/Documents/GITHUB/FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT/FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT.runs/fifo_81_eth_synth_1
+# Command line: vivado.exe -log fifo_81_eth.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_81_eth.tcl
+# Log file: C:/Users/ramon/Documents/GITHUB/FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT/FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT.runs/fifo_81_eth_synth_1/fifo_81_eth.vds
+# Journal file: C:/Users/ramon/Documents/GITHUB/FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT/FPGA_BASED_RADAR_ACQUISITION_AND_PREPROCESSING_UNIT.runs/fifo_81_eth_synth_1\vivado.jou
+#-----------------------------------------------------------
+source fifo_81_eth.tcl -notrace

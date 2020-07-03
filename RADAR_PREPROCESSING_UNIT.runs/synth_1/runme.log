@@ -1,0 +1,1215 @@
+
+*** Running vivado
+    with args -log main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source main.tcl -notrace
+Command: synth_design -top main -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9792 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 750.664 ; gain = 177.184
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'main' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:72]
+	Parameter DATA bound to: 4096 - type: integer 
+	Parameter PACKETS bound to: 32768 - type: integer 
+	Parameter RES bound to: 4 - type: integer 
+	Parameter ETH_SRC_MAC bound to: 48'b110111101010110110111110111011110000000100100011 
+	Parameter ETH_DST_MAC bound to: 48'b000000000000111011000110111000011111100101011000 
+	Parameter IP_SRC_ADDR bound to: 32'b00001010000010100000101000001010 
+	Parameter IP_DST_ADDR bound to: 32'b11000000101010000000000100001011 
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/clk_wiz_0_stub.v:5' bound to instance 'INST_CLK' of component 'clk_wiz_0' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:384]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/clk_wiz_0_stub.v:5]
+	Parameter RES bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'control' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/control.vhd:10' bound to instance 'INST_CONTROL' of component 'control' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:394]
+INFO: [Synth 8-638] synthesizing module 'control' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/control.vhd:31]
+	Parameter RES bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'control' (2#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/control.vhd:31]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/debouncer.vhd:11' bound to instance 'INST_DEBOUNCER_0' of component 'debouncer' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:413]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/debouncer.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (3#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/debouncer.vhd:19]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/debouncer.vhd:11' bound to instance 'INST_DEBOUNCER_1' of component 'debouncer' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:420]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/debouncer.vhd:11' bound to instance 'INST_DEBOUNCER_2' of component 'debouncer' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:427]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/debouncer.vhd:11' bound to instance 'INST_DEBOUNCER_3' of component 'debouncer' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:434]
+INFO: [Synth 8-3491] module 'demux2' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2.vhd:10' bound to instance 'INST_DEMUX2_0' of component 'demux2' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:441]
+INFO: [Synth 8-638] synthesizing module 'demux2' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'demux2' (4#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2.vhd:19]
+INFO: [Synth 8-3491] module 'demux2' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2.vhd:10' bound to instance 'INST_DEMUX2_1' of component 'demux2' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:449]
+INFO: [Synth 8-3491] module 'demux2' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2.vhd:10' bound to instance 'INST_DEMUX2_2' of component 'demux2' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:457]
+INFO: [Synth 8-3491] module 'demux2' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2.vhd:10' bound to instance 'INST_DEMUX2_3' of component 'demux2' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:465]
+INFO: [Synth 8-3491] module 'demux2_32b' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2_32b.vhd:10' bound to instance 'INST_DEMUX2_32B' of component 'demux2_32b' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:473]
+INFO: [Synth 8-638] synthesizing module 'demux2_32b' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2_32b.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'demux2_32b' (5#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/demux2_32b.vhd:19]
+INFO: [Synth 8-3491] module 'dram' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd:11' bound to instance 'INST_DRAM' of component 'dram' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:481]
+INFO: [Synth 8-638] synthesizing module 'dram' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd:46]
+	Parameter AW bound to: 26 - type: integer 
+	Parameter DDRWIDTH bound to: 16 - type: integer 
+	Parameter NDATA bound to: 4096 - type: integer 
+	Parameter NACK bound to: 2047 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter SELW bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'dram_control' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram_control.vhd:11' bound to instance 'INST_DRAM_CONTROL' of component 'dram_control' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd:175]
+INFO: [Synth 8-638] synthesizing module 'dram_control' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram_control.vhd:50]
+	Parameter AW bound to: 26 - type: integer 
+	Parameter DDRWIDTH bound to: 16 - type: integer 
+	Parameter NDATA bound to: 4096 - type: integer 
+	Parameter NACK bound to: 2047 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter SELW bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram_control.vhd:253]
+INFO: [Synth 8-226] default block is never used [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram_control.vhd:264]
+INFO: [Synth 8-256] done synthesizing module 'dram_control' (6#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram_control.vhd:50]
+INFO: [Synth 8-3491] module 'ila_0' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/ila_0_stub.v:6' bound to instance 'INST_ILA_0' of component 'ila_0' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd:213]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (7#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-3491] module 'mig_sdram' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/migsdram.v:51' bound to instance 'INST_MIG_SDRAM' of component 'mig_sdram' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd:234]
+INFO: [Synth 8-6157] synthesizing module 'mig_sdram' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/migsdram.v:51]
+	Parameter DDRWIDTH bound to: 16 - type: integer 
+	Parameter WBDATAWIDTH bound to: 32 - type: integer 
+	Parameter AXIDWIDTH bound to: 6 - type: integer 
+	Parameter RAMABITS bound to: 28 - type: integer 
+	Parameter AXIWIDTH bound to: 128 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter AW bound to: 26 - type: integer 
+	Parameter SELW bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mig_7series' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/mig_7series_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series' (8#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/mig_7series_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'wbm2axisp' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/rtl/wbm2axisp.v:57]
+	Parameter C_AXI_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 28 - type: integer 
+	Parameter DW bound to: 32 - type: integer 
+	Parameter AW bound to: 26 - type: integer 
+	Parameter STRICT_ORDER bound to: 1'b1 
+	Parameter LG_AXI_DW bound to: 7 - type: integer 
+	Parameter LG_WB_DW bound to: 5 - type: integer 
+	Parameter LGFIFOLN bound to: 6 - type: integer 
+	Parameter FIFOLN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'wbm2axisp' (9#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/rtl/wbm2axisp.v:57]
+WARNING: [Synth 8-7023] instance 'bus_translator' of module 'wbm2axisp' has 49 connections declared, but only 48 given [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/migsdram.v:224]
+INFO: [Synth 8-6155] done synthesizing module 'mig_sdram' (10#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/migsdram.v:51]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'INST_ILA_0'. This will prevent further optimization [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd:213]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'INST_DRAM_CONTROL'. This will prevent further optimization [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd:175]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'INST_MIG_SDRAM'. This will prevent further optimization [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd:234]
+INFO: [Synth 8-256] done synthesizing module 'dram' (11#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/dram.vhd:46]
+INFO: [Synth 8-3491] module 'fifo_ref_81' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_ref_81_stub.v:6' bound to instance 'INST_FIFO_REF_81' of component 'fifo_ref_81' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:515]
+INFO: [Synth 8-6157] synthesizing module 'fifo_ref_81' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_ref_81_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_ref_81' (12#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_ref_81_stub.v:6]
+INFO: [Synth 8-3491] module 'fifo_81_50' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_81_50_stub.v:6' bound to instance 'INST_FIFO_81_50' of component 'fifo_81_50' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:528]
+INFO: [Synth 8-6157] synthesizing module 'fifo_81_50' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_81_50_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_81_50' (13#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_81_50_stub.v:6]
+INFO: [Synth 8-3491] module 'fifo_50_eth' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_50_eth_stub.v:6' bound to instance 'INST_FIFO_50_ETH' of component 'fifo_50_eth' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:541]
+INFO: [Synth 8-6157] synthesizing module 'fifo_50_eth' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_50_eth_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_50_eth' (14#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_50_eth_stub.v:6]
+INFO: [Synth 8-3491] module 'fifo_81_eth' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_81_eth_stub.v:6' bound to instance 'INST_FIFO_81_ETH' of component 'fifo_81_eth' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:554]
+INFO: [Synth 8-6157] synthesizing module 'fifo_81_eth' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_81_eth_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_81_eth' (15#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/.Xil/Vivado-13584-DESKTOP-RAMON/realtime/fifo_81_eth_stub.v:6]
+INFO: [Synth 8-3491] module 'mux2' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/mux2.vhd:10' bound to instance 'INST_MUX2_0' of component 'mux2' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:567]
+INFO: [Synth 8-638] synthesizing module 'mux2' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/mux2.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'mux2' (16#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/mux2.vhd:19]
+INFO: [Synth 8-3491] module 'mux2' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/mux2.vhd:10' bound to instance 'INST_MUX2_1' of component 'mux2' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:575]
+INFO: [Synth 8-3491] module 'mux2_16b' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/mux2_16b.vhd:10' bound to instance 'INST_MUX2_16B' of component 'mux2_16b' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:583]
+INFO: [Synth 8-638] synthesizing module 'mux2_16b' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/mux2_16b.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'mux2_16b' (17#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/mux2_16b.vhd:19]
+	Parameter DATA bound to: 4096 - type: integer 
+	Parameter PACKETS bound to: 32768 - type: integer 
+	Parameter ETH_SRC_MAC bound to: 48'b110111101010110110111110111011110000000100100011 
+	Parameter ETH_DST_MAC bound to: 48'b000000000000111011000110111000011111100101011000 
+	Parameter IP_SRC_ADDR bound to: 168430090 - type: integer 
+	Parameter IP_DST_ADDR bound to: 168430090 - type: integer 
+INFO: [Synth 8-3491] module 'interface' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/interface.vhd:10' bound to instance 'INST_INTERFACE' of component 'interface' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:591]
+INFO: [Synth 8-638] synthesizing module 'interface' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/interface.vhd:44]
+	Parameter DATA bound to: 4096 - type: integer 
+	Parameter PACKETS bound to: 32768 - type: integer 
+	Parameter ETH_SRC_MAC bound to: 48'b110111101010110110111110111011110000000100100011 
+	Parameter ETH_DST_MAC bound to: 48'b000000000000111011000110111000011111100101011000 
+	Parameter IP_SRC_ADDR bound to: 168430090 - type: integer 
+	Parameter IP_DST_ADDR bound to: 168430090 - type: integer 
+	Parameter ETH_SRC_MAC bound to: 48'b110111101010110110111110111011110000000100100011 
+	Parameter ETH_DST_MAC bound to: 48'b000000000000111011000110111000011111100101011000 
+	Parameter IP_SRC_ADDR bound to: 168430090 - type: integer 
+	Parameter IP_DST_ADDR bound to: 168430090 - type: integer 
+INFO: [Synth 8-3491] module 'ethernet' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:15' bound to instance 'INST_ETHERNET' of component 'ethernet' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/interface.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'ethernet' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:53]
+	Parameter ETH_SRC_MAC bound to: 48'b110111101010110110111110111011110000000100100011 
+	Parameter ETH_DST_MAC bound to: 48'b000000000000111011000110111000011111100101011000 
+	Parameter IP_SRC_ADDR bound to: 168430090 - type: integer 
+	Parameter IP_DST_ADDR bound to: 168430090 - type: integer 
+	Parameter eth_src_mac bound to: 48'b110111101010110110111110111011110000000100100011 
+	Parameter eth_dst_mac bound to: 48'b000000000000111011000110111000011111100101011000 
+	Parameter ip_src_addr bound to: 168430090 - type: integer 
+	Parameter ip_dst_addr bound to: 168430090 - type: integer 
+INFO: [Synth 8-3491] module 'nibble_data' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/nibble_data.vhd:17' bound to instance 'data' of component 'nibble_data' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:151]
+INFO: [Synth 8-638] synthesizing module 'nibble_data' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/nibble_data.vhd:35]
+	Parameter eth_src_mac bound to: 48'b110111101010110110111110111011110000000100100011 
+	Parameter eth_dst_mac bound to: 48'b000000000000111011000110111000011111100101011000 
+	Parameter ip_src_addr bound to: 168430090 - type: integer 
+	Parameter ip_dst_addr bound to: 168430090 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'nibble_data' (18#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/nibble_data.vhd:35]
+INFO: [Synth 8-3491] module 'add_seq_num' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_seq_num.vhd:13' bound to instance 'i_add_seq_num' of component 'add_seq_num' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'add_seq_num' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_seq_num.vhd:23]
+INFO: [Synth 8-4471] merging register 'data_enable_in_last_reg' into 'data_enable_out_reg' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_seq_num.vhd:35]
+WARNING: [Synth 8-6014] Unused sequential element data_enable_in_last_reg was removed.  [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_seq_num.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'add_seq_num' (19#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_seq_num.vhd:23]
+INFO: [Synth 8-3491] module 'add_crc32' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_crc32.vhd:14' bound to instance 'i_add_crc32' of component 'add_crc32' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:177]
+INFO: [Synth 8-638] synthesizing module 'add_crc32' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_crc32.vhd:22]
+WARNING: [Synth 8-6014] Unused sequential element v_crc_reg was removed.  [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_crc32.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'add_crc32' (20#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_crc32.vhd:22]
+INFO: [Synth 8-3491] module 'add_preamble' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_preamble.vhd:13' bound to instance 'i_add_preamble' of component 'add_preamble' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:184]
+INFO: [Synth 8-638] synthesizing module 'add_preamble' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_preamble.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'add_preamble' (21#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/add_preamble.vhd:21]
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-113] binding component instance 'clock_fwd_ddr' to cell 'ODDR' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:233]
+INFO: [Synth 8-113] binding component instance 'i_bufg' to cell 'BUFG' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:249]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 8 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE bound to: 32 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT1_DIVIDE bound to: 16 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT2_DIVIDE bound to: 16 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT3_DIVIDE bound to: 16 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT4_DIVIDE bound to: 16 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT5_DIVIDE bound to: 16 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.000000 - type: float 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-113] binding component instance 'clocking' to cell 'PLLE2_BASE' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:250]
+INFO: [Synth 8-256] done synthesizing module 'ethernet' (22#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/hdl/ethernet.vhd:53]
+	Parameter DATA bound to: 4096 - type: integer 
+	Parameter PACKETS bound to: 32768 - type: integer 
+INFO: [Synth 8-3491] module 'ethernet_control' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/ethernet_control.vhd:10' bound to instance 'INST_ETHERNET_CONTROL' of component 'ethernet_control' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/interface.vhd:124]
+INFO: [Synth 8-638] synthesizing module 'ethernet_control' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/ethernet_control.vhd:28]
+	Parameter DATA bound to: 4096 - type: integer 
+	Parameter PACKETS bound to: 32768 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/ethernet_control.vhd:114]
+INFO: [Synth 8-256] done synthesizing module 'ethernet_control' (23#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/ethernet_control.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'interface' (24#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/interface.vhd:44]
+	Parameter DATA bound to: 4096 - type: integer 
+	Parameter PACKETS bound to: 32768 - type: integer 
+INFO: [Synth 8-3491] module 'memory' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/memory.vhd:10' bound to instance 'INST_MEMORY' of component 'memory' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:624]
+INFO: [Synth 8-638] synthesizing module 'memory' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/memory.vhd:37]
+	Parameter DATA bound to: 4096 - type: integer 
+	Parameter PACKETS bound to: 32768 - type: integer 
+	Parameter clockRate bound to: 50000000 - type: integer 
+	Parameter slowClockDivider bound to: 128 - type: integer 
+	Parameter R1_TIMEOUT bound to: 64 - type: integer 
+	Parameter WRITE_TIMEOUT bound to: 500 - type: integer 
+	Parameter RESET_TICKS bound to: 64 - type: integer 
+	Parameter ACTION_RETRIES bound to: 200 - type: integer 
+	Parameter READ_TOKEN_TIMEOUT bound to: 1000 - type: integer 
+INFO: [Synth 8-3491] module 'sd' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:144' bound to instance 'INST_SD' of component 'sd' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/memory.vhd:120]
+INFO: [Synth 8-638] synthesizing module 'sd' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:197]
+	Parameter clockRate bound to: 50000000 - type: integer 
+	Parameter slowClockDivider bound to: 128 - type: integer 
+	Parameter R1_TIMEOUT bound to: 64 - type: integer 
+	Parameter WRITE_TIMEOUT bound to: 500 - type: integer 
+	Parameter RESET_TICKS bound to: 64 - type: integer 
+	Parameter ACTION_RETRIES bound to: 200 - type: integer 
+	Parameter READ_TOKEN_TIMEOUT bound to: 1000 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element start_token_timeout_reg was removed.  [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:377]
+INFO: [Synth 8-4471] merging register 'sd_type_reg[1:0]' into 'card_type_reg[1:0]' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:362]
+INFO: [Synth 8-4471] merging register 'sd_error_reg' into 'error_reg' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:364]
+INFO: [Synth 8-4471] merging register 'sd_error_code_reg[7:0]' into 'error_code_reg[7:0]' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:365]
+INFO: [Synth 8-4471] merging register 'temp_sclk_reg' into 'sclk_reg' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:372]
+WARNING: [Synth 8-6014] Unused sequential element sd_type_reg was removed.  [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:362]
+WARNING: [Synth 8-6014] Unused sequential element sd_error_reg was removed.  [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:364]
+WARNING: [Synth 8-6014] Unused sequential element sd_error_code_reg was removed.  [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:365]
+WARNING: [Synth 8-6014] Unused sequential element temp_sclk_reg was removed.  [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:372]
+INFO: [Synth 8-256] done synthesizing module 'sd' (25#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:197]
+	Parameter DATA bound to: 4096 - type: integer 
+	Parameter PACKETS bound to: 32768 - type: integer 
+INFO: [Synth 8-3491] module 'sd_control' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/sd_control.vhd:11' bound to instance 'INST_SD_CONTROL' of component 'sd_control' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/memory.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'sd_control' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/sd_control.vhd:41]
+	Parameter DATA bound to: 4096 - type: integer 
+	Parameter PACKETS bound to: 32768 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/sd_control.vhd:239]
+INFO: [Synth 8-256] done synthesizing module 'sd_control' (26#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/sd_control.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'memory' (27#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/memory.vhd:37]
+	Parameter DATA bound to: 4096 - type: integer 
+INFO: [Synth 8-3491] module 'processing' declared at 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/processing.vhd:11' bound to instance 'INST_PROCESSING' of component 'processing' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:650]
+INFO: [Synth 8-638] synthesizing module 'processing' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/processing.vhd:30]
+	Parameter DATA bound to: 4096 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'processing' (28#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/processing.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'main' (29#1) [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/main.vhd:72]
+WARNING: [Synth 8-3331] design processing has unconnected port clk
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_mdio
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_rx_d[3]
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_rx_d[2]
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_rx_d[1]
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_rx_d[0]
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_rx_err
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_rx_dv
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_rx_clk
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_col
+WARNING: [Synth 8-3331] design ethernet has unconnected port eth_crs
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_bid[5]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_bid[4]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_bid[3]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_bid[2]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_bid[1]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_bid[0]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_bresp[0]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_rid[5]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_rid[4]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_rid[3]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_rid[2]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_rid[1]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_rid[0]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_rresp[0]
+WARNING: [Synth 8-3331] design wbm2axisp has unconnected port i_axi_rlast
+WARNING: [Synth 8-3331] design dram_control has unconnected port o_wb_err
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 832.199 ; gain = 258.719
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 832.199 ; gain = 258.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 832.199 ; gain = 258.719
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/fifo_ref_81/fifo_ref_81/fifo_ref_81_in_context.xdc] for cell 'INST_FIFO_REF_81'
+Finished Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/fifo_ref_81/fifo_ref_81/fifo_ref_81_in_context.xdc] for cell 'INST_FIFO_REF_81'
+Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/fifo_50_eth/fifo_50_eth/fifo_50_eth_in_context.xdc] for cell 'INST_FIFO_50_ETH'
+Finished Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/fifo_50_eth/fifo_50_eth/fifo_50_eth_in_context.xdc] for cell 'INST_FIFO_50_ETH'
+Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/fifo_81_eth/fifo_81_eth/fifo_81_eth_in_context.xdc] for cell 'INST_FIFO_81_ETH'
+Finished Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/fifo_81_eth/fifo_81_eth/fifo_81_eth_in_context.xdc] for cell 'INST_FIFO_81_ETH'
+Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'INST_DRAM/INST_ILA_0'
+Finished Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'INST_DRAM/INST_ILA_0'
+Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc] for cell 'INST_DRAM/INST_MIG_SDRAM/INST_MIG_7SERIES'
+Finished Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc] for cell 'INST_DRAM/INST_MIG_SDRAM/INST_MIG_7SERIES'
+Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/fifo_81_50/fifo_81_50/fifo_81_50_in_context.xdc] for cell 'INST_FIFO_81_50'
+Finished Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/fifo_81_50/fifo_81_50/fifo_81_50_in_context.xdc] for cell 'INST_FIFO_81_50'
+Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'INST_CLK'
+Finished Parsing XDC File [c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'INST_CLK'
+Parsing XDC File [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/constrs_1/new/ARTY.xdc]
+Finished Parsing XDC File [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/constrs_1/new/ARTY.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/constrs_1/new/ARTY.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 975.242 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  PLLE2_BASE => PLLE2_ADV: 1 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 975.242 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 975.242 ; gain = 401.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 975.242 ; gain = 401.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 2).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 3).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[10]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[10]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[11]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[11]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[12]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 8).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[12]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 9).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[13]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 10).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[13]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 11).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 12).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 13).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[2]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 14).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[2]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 15).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[3]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 16).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[3]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 17).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[4]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 18).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[4]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 19).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[5]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 20).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[5]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 21).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[6]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 22).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[6]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 23).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[7]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 24).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[7]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 25).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[8]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 26).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[8]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 27).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_addr[9]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 28).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_addr[9]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 29).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_ba[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 30).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_ba[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 31).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_ba[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 32).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_ba[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 33).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_ba[2]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 34).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_ba[2]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 35).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_cas_n. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 36).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_cas_n. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 37).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_ck_n[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 38).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_ck_n[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 39).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_ck_p[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 40).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_ck_p[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 41).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_cke[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 42).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_cke[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 43).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_cs_n[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 44).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_cs_n[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 45).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_dm[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 46).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_dm[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 47).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_dm[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 48).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_dm[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 49).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 50).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 51).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[10]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 52).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[10]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 53).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[11]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 54).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[11]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 55).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[12]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 56).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[12]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 57).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[13]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 58).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[13]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 59).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[14]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 60).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[14]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 61).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[15]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 62).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[15]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 63).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 64).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 65).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[2]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 66).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[2]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 67).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[3]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 68).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[3]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 69).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[4]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 70).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[4]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 71).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[5]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 72).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[5]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 73).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[6]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 74).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[6]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 75).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[7]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 76).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[7]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 77).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[8]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 78).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[8]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 79).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_data[9]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 80).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_data[9]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 81).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_dqs_n[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 82).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_dqs_n[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 83).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_dqs_n[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 84).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_dqs_n[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 85).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_dqs_p[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 86).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_dqs_p[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 87).
+Applied set_property IO_BUFFER_TYPE = NONE for io_ddr_dqs_p[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 88).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for io_ddr_dqs_p[1]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 89).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_odt[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 90).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_odt[0]. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 91).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_ras_n. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 92).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_ras_n. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 93).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_reset_n. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 94).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_reset_n. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 95).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ddr_we_n. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 96).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ddr_we_n. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/mig_7series/mig_7series/mig_7series_in_context.xdc, line 97).
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  c:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
+Applied set_property DONT_TOUCH = true for INST_FIFO_REF_81. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for INST_FIFO_50_ETH. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for INST_FIFO_81_ETH. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for INST_DRAM/INST_ILA_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for INST_DRAM/INST_MIG_SDRAM/INST_MIG_7SERIES. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for INST_FIFO_81_50. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for INST_CLK. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 975.242 ; gain = 401.762
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/new/control.vhd:126]
+INFO: [Synth 8-802] inferred FSM for state register 'dram_state_reg' in module 'dram_control'
+INFO: [Synth 8-5546] ROM "data_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "user_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'dout_avail_reg' into 'sDavail_reg' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:367]
+INFO: [Synth 8-4471] merging register 'din_taken_reg' into 'sDin_taken_reg' [C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.srcs/sources_1/imports/new/sd.vhd:368]
+ROM "sd_fsm" will be implemented in logic because its size less than 1024
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sd_control'
+INFO: [Synth 8-5545] ROM "RES" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+                 receive |                               01 |                               10
+                wait_for |                               10 |                               11
+                    send |                               11 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dram_state_reg' using encoding 'sequential' in module 'dram_control'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                              000
+                      w1 |                              001 |                              001
+                      w2 |                              010 |                              010
+                      w3 |                              011 |                              011
+                      r1 |                              100 |                              100
+                      r2 |                              101 |                              101
+                      r3 |                              110 |                              110
+                wait_for |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sd_control'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 975.242 ; gain = 401.762
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     40 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 13    
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 4     
+	   2 Input      6 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 4     
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 12    
++---Registers : 
+	              128 Bit    Registers := 2     
+	               64 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 17    
+	               28 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 5     
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 11    
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 6     
+	                4 Bit    Registers := 9     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 82    
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 4     
+	  59 Input     40 Bit        Muxes := 1     
+	   2 Input     39 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 24    
+	   3 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 6     
+	   8 Input     32 Bit        Muxes := 5     
+	   4 Input     26 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 4     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 5     
+	   2 Input     14 Bit        Muxes := 1     
+	 100 Input     12 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 18    
+	   5 Input      6 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 5     
+	  59 Input      6 Bit        Muxes := 2     
+	  31 Input      6 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 5     
+	   2 Input      5 Bit        Muxes := 8     
+	  59 Input      5 Bit        Muxes := 1     
+	 100 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 13    
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 12    
+	  59 Input      3 Bit        Muxes := 4     
+	   5 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 8     
+	   4 Input      2 Bit        Muxes := 2     
+	  59 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 177   
+	   4 Input      1 Bit        Muxes := 21    
+	 100 Input      1 Bit        Muxes := 3     
+	  59 Input      1 Bit        Muxes := 25    
+	   5 Input      1 Bit        Muxes := 5     
+	   6 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 21    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module control 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 40    
+Module debouncer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module demux2_32b 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module dram_control 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 5     
++---Registers : 
+	               32 Bit    Registers := 6     
+	               26 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 5     
+	   4 Input     26 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 13    
+	   4 Input      1 Bit        Muxes := 18    
+Module wbm2axisp 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	               28 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
++---RAMs : 
+	              128 Bit         RAMs := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module mig_sdram 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module mux2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mux2_16b 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module nibble_data 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	 100 Input     12 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	 100 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	 100 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 3     
+Module add_seq_num 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+Module add_crc32 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 4     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module add_preamble 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module ethernet 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
+Module ethernet_control 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 14    
+Module sd 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     40 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 4     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 8     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 10    
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 14    
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 4     
+	  59 Input     40 Bit        Muxes := 1     
+	   2 Input     39 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 18    
+	   5 Input      6 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 5     
+	  59 Input      6 Bit        Muxes := 2     
+	  31 Input      6 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 5     
+	   2 Input      5 Bit        Muxes := 8     
+	  59 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	  59 Input      3 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 3     
+	   5 Input      3 Bit        Muxes := 1     
+	  59 Input      2 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 70    
+	  59 Input      1 Bit        Muxes := 25    
+	   4 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 5     
+	   6 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
+Module sd_control 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 5     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   8 Input     32 Bit        Muxes := 5     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 13    
+	   8 Input      1 Bit        Muxes := 21    
+Module processing 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     24 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 10    
+	   2 Input     24 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 4     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "INST_ETHERNET/data/user_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INST_ETHERNET/data/data_valid" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design processing has unconnected port clk
+WARNING: [Synth 8-3331] design interface has unconnected port io_eth_mdio
+WARNING: [Synth 8-3331] design interface has unconnected port i_eth_rx_d[3]
+WARNING: [Synth 8-3331] design interface has unconnected port i_eth_rx_d[2]
+WARNING: [Synth 8-3331] design interface has unconnected port i_eth_rx_d[1]
+WARNING: [Synth 8-3331] design interface has unconnected port i_eth_rx_d[0]
+WARNING: [Synth 8-3331] design interface has unconnected port i_eth_rx_err
+WARNING: [Synth 8-3331] design interface has unconnected port i_eth_rx_dv
+WARNING: [Synth 8-3331] design interface has unconnected port i_eth_rx_clk
+WARNING: [Synth 8-3331] design interface has unconnected port i_eth_col
+WARNING: [Synth 8-3331] design interface has unconnected port i_eth_crs
+WARNING: [Synth 8-3331] design dram_control has unconnected port o_wb_err
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/dout_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/dout_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/dout_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/dout_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/dout_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/dout_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/dout_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/dout_reg[7] )
+INFO: [Synth 8-3886] merging instance 'INST_MEMORY/INST_SD/wr_erase_count_reg[3]' (FDRE) to 'INST_MEMORY/INST_SD/wr_erase_count_reg[1]'
+INFO: [Synth 8-3886] merging instance 'INST_MEMORY/INST_SD/wr_erase_count_reg[4]' (FDRE) to 'INST_MEMORY/INST_SD/wr_erase_count_reg[1]'
+INFO: [Synth 8-3886] merging instance 'INST_MEMORY/INST_SD/wr_erase_count_reg[5]' (FDRE) to 'INST_MEMORY/INST_SD/wr_erase_count_reg[1]'
+INFO: [Synth 8-3886] merging instance 'INST_MEMORY/INST_SD/wr_erase_count_reg[2]' (FDRE) to 'INST_MEMORY/INST_SD/wr_erase_count_reg[1]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\INST_MEMORY/INST_SD/wr_erase_count_reg[0] )
+INFO: [Synth 8-3886] merging instance 'INST_MEMORY/INST_SD/wr_erase_count_reg[1]' (FDRE) to 'INST_MEMORY/INST_SD/wr_erase_count_reg[6]'
+INFO: [Synth 8-3886] merging instance 'INST_MEMORY/INST_SD/wr_erase_count_reg[6]' (FDRE) to 'INST_MEMORY/INST_SD/wr_erase_count_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/wr_erase_count_reg[7] )
+INFO: [Synth 8-3886] merging instance 'INST_PROCESSING/processing_dout_reg[12]' (FDCE) to 'INST_PROCESSING/processing_dout_reg[15]'
+INFO: [Synth 8-3886] merging instance 'INST_PROCESSING/processing_dout_reg[13]' (FDCE) to 'INST_PROCESSING/processing_dout_reg[15]'
+INFO: [Synth 8-3886] merging instance 'INST_PROCESSING/processing_dout_reg[14]' (FDCE) to 'INST_PROCESSING/processing_dout_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/sDin_taken_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\INST_MEMORY/INST_SD/sDavail_reg )
+INFO: [Synth 8-3886] merging instance 'INST_MEMORY/INST_SD/original_state_reg[3]' (FDRE) to 'INST_MEMORY/INST_SD/original_state_reg[4]'
+INFO: [Synth 8-3886] merging instance 'INST_MEMORY/INST_SD/original_state_reg[5]' (FDRE) to 'INST_MEMORY/INST_SD/original_state_reg[1]'
+INFO: [Synth 8-3886] merging instance 'INST_MEMORY/INST_SD/original_state_reg[2]' (FDRE) to 'INST_MEMORY/INST_SD/original_state_reg[1]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[0]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[32]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[1]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[33]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[2]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[34]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[3]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[35]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[4]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[36]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[5]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[37]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[6]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[38]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[7]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[39]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[8]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[40]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[9]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[41]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[10]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[42]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[11]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[43]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[12]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[44]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[13]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[45]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[14]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[46]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[15]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[47]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[16]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[48]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[17]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[49]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[18]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[50]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[19]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[51]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[20]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[52]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[21]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[53]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[22]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[54]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[23]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[55]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[24]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[56]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[25]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[57]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[26]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[58]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[27]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[59]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[28]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[60]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[29]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[61]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[30]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[62]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[31]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[63]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[32]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[64]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[33]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[65]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[34]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[66]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[35]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[67]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[36]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[68]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[37]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[69]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[38]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[70]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[39]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[71]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[40]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[72]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[41]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[73]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[42]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[74]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[43]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[75]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[44]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[76]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[45]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[77]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[46]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[78]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[47]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[79]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[48]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[80]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[49]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[81]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[50]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[82]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[51]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[83]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[52]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[84]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[53]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[85]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[54]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[86]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[55]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[87]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[56]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[88]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[57]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[89]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[58]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[90]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[59]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[91]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[60]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[92]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[61]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[93]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[62]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[94]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[63]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[95]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[64]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[96]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[65]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[97]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[66]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[98]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[67]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[99]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[68]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[100]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[69]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[101]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[70]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[102]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[71]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[103]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[72]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[104]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[73]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[105]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[74]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[106]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[75]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[107]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[76]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[108]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[77]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[109]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[78]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[110]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[79]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[111]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[80]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[112]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[81]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[113]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[82]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[114]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[83]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[115]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[84]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[116]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[85]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[117]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[86]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[118]'
+INFO: [Synth 8-3886] merging instance 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[87]' (FDE) to 'INST_DRAM/INST_MIG_SDRAM/bus_translator/o_axi_wdata_reg[119]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (INST_DRAM/INST_MIG_SDRAM/\bus_translator/o_axi_awaddr_reg[3] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 975.242 ; gain = 401.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|sd          | sd_fsm     | 64x8          | LUT            | 
+|sd          | sd_fsm     | 64x8          | LUT            | 
++------------+------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++-------------------------+--------------------------------------+-----------+----------------------+--------------+
+|Module Name              | RTL Object                           | Inference | Size (Depth x Width) | Primitives   | 
++-------------------------+--------------------------------------+-----------+----------------------+--------------+
+|INST_DRAM/INST_MIG_SDRAM | bus_translator/reorder_fifo_addr_reg | Implied   | 64 x 2               | RAM64M x 1   | 
++-------------------------+--------------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'INST_DRAM/INST_MIG_SDRAM/INST_MIG_7SERIES/ui_clk' to pin 'INST_DRAM/INST_MIG_SDRAM/INST_MIG_7SERIES/bbstub_ui_clk/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'INST_CLK/clk_200' to pin 'INST_CLK/bbstub_clk_200/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'INST_CLK/clk_25' to pin 'INST_CLK/bbstub_clk_25/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'INST_CLK/clk_50' to pin 'INST_CLK/bbstub_clk_50/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'INST_CLK/clk_81' to pin 'INST_CLK/bbstub_clk_81/O'
+INFO: [Synth 8-5819] Moved 5 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 975.242 ; gain = 401.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 988.449 ; gain = 414.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++-------------------------+--------------------------------------+-----------+----------------------+--------------+
+|Module Name              | RTL Object                           | Inference | Size (Depth x Width) | Primitives   | 
++-------------------------+--------------------------------------+-----------+----------------------+--------------+
+|INST_DRAM/INST_MIG_SDRAM | bus_translator/reorder_fifo_addr_reg | Implied   | 64 x 2               | RAM64M x 1   | 
++-------------------------+--------------------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 994.246 ; gain = 420.766
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 999.754 ; gain = 426.273
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 999.754 ; gain = 426.273
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 999.754 ; gain = 426.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 999.754 ; gain = 426.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 999.754 ; gain = 426.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 999.754 ; gain = 426.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-----------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                              | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|main        | INST_INTERFACE/INST_ETHERNET/i_add_preamble/delay_data_enable_reg[14] | 15     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|main        | INST_INTERFACE/INST_ETHERNET/i_add_preamble/delay_data_reg[63]        | 17     | 4     | NO           | NO                 | YES               | 4      | 0       | 
++------------+-----------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |mig_7series   |         1|
+|2     |ila_0         |         1|
+|3     |clk_wiz_0     |         1|
+|4     |fifo_ref_81   |         1|
+|5     |fifo_81_50    |         1|
+|6     |fifo_50_eth   |         1|
+|7     |fifo_81_eth   |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |clk_wiz_0   |     1|
+|2     |fifo_50_eth |     1|
+|3     |fifo_81_50  |     1|
+|4     |fifo_81_eth |     1|
+|5     |fifo_ref_81 |     1|
+|6     |ila_0       |     1|
+|7     |mig_7series |     1|
+|8     |BUFG        |     3|
+|9     |CARRY4      |   189|
+|10    |LUT1        |    56|
+|11    |LUT2        |   571|
+|12    |LUT3        |   355|
+|13    |LUT4        |   198|
+|14    |LUT5        |   177|
+|15    |LUT6        |   533|
+|16    |MUXF7       |     1|
+|17    |ODDR        |     1|
+|18    |PLLE2_BASE  |     1|
+|19    |RAM64M      |     1|
+|20    |SRL16E      |     5|
+|21    |FDCE        |   600|
+|22    |FDPE        |     4|
+|23    |FDRE        |   553|
+|24    |FDSE        |    59|
+|25    |LDC         |     1|
+|26    |IBUF        |    24|
+|27    |OBUF        |    13|
++------+------------+------+
+
+Report Instance Areas: 
++------+--------------------------+-----------------+------+
+|      |Instance                  |Module           |Cells |
++------+--------------------------+-----------------+------+
+|1     |top                       |                 |  3632|
+|2     |  INST_DRAM               |dram             |  1091|
+|3     |    INST_DRAM_CONTROL     |dram_control     |   549|
+|4     |    INST_MIG_SDRAM        |mig_sdram        |   542|
+|5     |      bus_translator      |wbm2axisp        |   343|
+|6     |  INST_CONTROL            |control          |   182|
+|7     |  INST_DEBOUNCER_0        |debouncer        |    13|
+|8     |  INST_DEBOUNCER_1        |debouncer_0      |    13|
+|9     |  INST_DEBOUNCER_2        |debouncer_1      |    13|
+|10    |  INST_DEBOUNCER_3        |debouncer_2      |    13|
+|11    |  INST_INTERFACE          |interface        |   483|
+|12    |    INST_ETHERNET         |ethernet         |   267|
+|13    |      data                |nibble_data      |    80|
+|14    |      i_add_crc32         |add_crc32        |    63|
+|15    |      i_add_preamble      |add_preamble     |    23|
+|16    |      i_add_seq_num       |add_seq_num      |    52|
+|17    |    INST_ETHERNET_CONTROL |ethernet_control |   216|
+|18    |  INST_MEMORY             |memory           |  1243|
+|19    |    INST_SD               |sd               |   756|
+|20    |    INST_SD_CONTROL       |sd_control       |   487|
+|21    |  INST_PROCESSING         |processing       |   386|
++------+--------------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 999.754 ; gain = 426.273
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:44 . Memory (MB): peak = 999.754 ; gain = 283.230
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 999.754 ; gain = 426.273
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 194 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 999.754 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  LDC => LDCE: 1 instances
+  PLLE2_BASE => PLLE2_ADV: 1 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+254 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 999.754 ; gain = 669.352
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 999.754 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ramon/Documents/GITHUB/RADAR_PREPROCESSING_UNIT/RADAR_PREPROCESSING_UNIT.runs/synth_1/main.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 27 21:10:26 2020...
